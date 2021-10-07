@@ -1,0 +1,66 @@
+{
+    "product_name": "qemu_small_system_demo",
+    "ohos_version": "OpenHarmony 1.0",
+    "device_company": "qemu",
+    "board": "arm_virt",
+    "kernel_type": "liteos_a",
+    "kernel_version": "3.0.0",
+    "subsystems": [
+      {
+        "subsystem": "distributed_schedule",
+        "components": [
+          { "component": "safwk_lite", "features":[] },
+          { "component": "samgr_lite", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "hiviewdfx",
+        "components": [
+          { "component": "hilog", "features":[] },
+          { "component": "hidumper", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "startup",
+        "components": [
+          { "component": "syspara_lite", "features":[] },
+          { "component": "bootstrap_lite", "features":[] },
+          { "component": "appspawn_lite", "features":[] },
+          { "component": "init_lite", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "graphic",
+        "components": [
+          { "component": "graphic_utils", "features":[] },
+          { "component": "graphic_hals", "features":[] },
+          { "component": "ui", "features":[ "enable_graphic_font = true" ] },
+          { "component": "surface", "features":[] },
+          { "component": "wms", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "kernel",
+        "components": [
+          { "component": "liteos_a", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "communication",
+        "components": [
+          { "component": "ipc_lite", "features":[] },
+          { "component": "dsoftbus", "features":[] },
+          { "component": "wpa_supplicant", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "utils",
+        "components": [
+          { "component": "kv_store", "features":[] },
+          { "component": "os_dump", "features":[] }
+        ]
+      }
+    ],
+    "third_party_dir": "//third_party",
+    "product_adapter_dir": "//vendor/ohemu/qemu_small_system_demo/hals"
+  }
