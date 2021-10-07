@@ -84,6 +84,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+developtools/
 out/
 prebuilts/
 applications/sample/camera/prebuilts/
