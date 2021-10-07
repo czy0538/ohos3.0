@@ -1,0 +1,11 @@
+[
+  {
+   "Name":"XKeyboardConfig",
+   "License":"MIT",
+   "License File":"COPYING",
+   "Version Number":"2.30",
+   "Owner":"pengfei.hou@huawei.com",
+   "Upstream URL":"https://www.freedesktop.org/wiki/Software/XKeyboardConfig/Development/",
+   "Description": "The non-arch keyboard configuration database for X Window. The goal is to provide the consistent, well-structured, frequently released open source of X keyboard configuration data for X Window System implementations (free, open source and commercial). The project is targeted to XKB-based systems"
+  }
+]

@@ -1,0 +1,508 @@
+# Copyright (c) 2021 Huawei Device Co., Ltd.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import("//build/ohos.gni")
+import("//third_party/wayland_standard/wayland_protocol.gni")
+
+## Generate Wayland Protocols {{{
+wayland_protocol("ivi_wm_protocol") {
+  sources = [ "protocol/ivi-wm.xml" ]
+}
+wayland_protocol("ivi_input_protocol") {
+  sources = [ "protocol/ivi-input.xml" ]
+}
+wayland_protocol("screen_info_protocol") {
+  sources = [ "screen-info/protocol/screen-info.xml" ]
+}
+
+## Generate Wayland Protocols }}}
+
+## Build ivi-controller.so {{{
+config("ivi-controller_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [
+    "//third_party/wayland_standard",
+    "//third_party/weston/compositor",
+    "//third_party/weston/ivi-shell",
+    "//third_party/weston/libweston",
+    "screen-info/module",
+  ]
+
+  cflags = [
+    "-Wall",
+    "-Werror",
+    "-Wno-incompatible-pointer-types",
+  ]
+}
+
+config("ivi-controller_public_config") {
+  include_dirs = [ "weston-ivi-shell/src" ]
+}
+
+ohos_shared_library("ivi-controller") {
+  sources = [ "weston-ivi-shell/src/ivi-controller.c" ]
+
+  configs = [ ":ivi-controller_config" ]
+
+  public_configs = [ ":ivi-controller_public_config" ]
+
+  deps = [
+    ":ivi_input_protocol",
+    "//third_party/wayland_standard:wayland_core_protocol",
+    "//third_party/weston:ivi_application_protocol",
+    "//third_party/weston:libexec_weston",
+  ]
+
+  public_deps = [ ":ivi_wm_protocol" ]
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build ivi-controller.so }}}
+
+## Build ivi-input-controller.so {{{
+config("ivi-input-controller_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [
+    "//third_party/weston/ivi-shell",
+    "//third_party/weston/include/libweston",
+    "ivi-layermanagement-api/ilmCommon/include",
+    "weston-ivi-shell/src",
+    "//third_party/weston/libweston",
+  ]
+
+  cflags = [
+    "-Wall",
+    "-Werror",
+    "-Wno-incompatible-pointer-types",
+  ]
+}
+
+config("ivi-input-controller_public_config") {
+  include_dirs = []
+}
+
+ohos_shared_library("ivi-input-controller") {
+  sources =
+      [ "ivi-input-modules/ivi-input-controller/src/ivi-input-controller.c" ]
+
+  configs = [ ":ivi-input-controller_config" ]
+
+  public_configs = [ ":ivi-input-controller_public_config" ]
+
+  deps = [
+    ":ivi_input_protocol",
+    ":ivi_wm_protocol",
+    "//third_party/wayland_standard:wayland_core_protocol",
+    "//third_party/weston:ivi_application_protocol",
+    "//third_party/weston:libweston",
+  ]
+
+  public_deps = []
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build ivi-input-controller.so }}}
+
+## Build ivi-id-agent.so {{{
+config("ivi-id-agent_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [
+    "//third_party/weston/compositor",
+    "//third_party/weston/ivi-shell",
+    "//third_party/weston/include/libweston",
+  ]
+
+  cflags = []
+}
+
+config("ivi-id-agent_public_config") {
+  include_dirs = []
+}
+
+ohos_shared_library("ivi-id-agent") {
+  sources = [ "ivi-id-agent-modules/ivi-id-agent/src/ivi-id-agent.c" ]
+
+  configs = [ ":ivi-id-agent_config" ]
+
+  public_configs = [ ":ivi-id-agent_public_config" ]
+
+  deps = [ "//third_party/weston:libweston-desktop" ]
+
+  public_deps = []
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build ivi-id-agent.so }}}
+
+## Build libilmClient.so {{{
+config("libilmClient_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [ "ivi-layermanagement-api/ilmCommon/include" ]
+
+  cflags = [
+    "-Wall",
+    "-Werror",
+  ]
+}
+
+config("libilmClient_public_config") {
+  include_dirs = [ "ivi-layermanagement-api/ilmClient/include" ]
+}
+
+ohos_shared_library("libilmClient") {
+  sources = [
+    "ivi-layermanagement-api/ilmClient/src/ilm_client.c",
+    "ivi-layermanagement-api/ilmClient/src/ilm_client_wayland_platform.c",
+  ]
+
+  configs = [ ":libilmClient_config" ]
+
+  public_configs = [ ":libilmClient_public_config" ]
+
+  deps = [ "//third_party/wayland_standard:libwayland_client" ]
+
+  public_deps = [
+    "//third_party/wayland_standard:wayland_core_protocol",
+    "//third_party/weston:ivi_application_protocol",
+  ]
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build libilmClient.so }}}
+
+## Build libilmCommon.so {{{
+config("libilmCommon_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = []
+
+  cflags = []
+}
+
+config("libilmCommon_public_config") {
+  include_dirs = [ "ivi-layermanagement-api/ilmCommon/include" ]
+}
+
+ohos_shared_library("libilmCommon") {
+  sources = [
+    "ivi-layermanagement-api/ilmCommon/src/ilm_common.c",
+    "ivi-layermanagement-api/ilmCommon/src/ilm_common_wayland_platform.c",
+  ]
+
+  configs = [ ":libilmCommon_config" ]
+
+  public_configs = [ ":libilmCommon_public_config" ]
+
+  deps = [
+    ":libilmControl",
+    "//third_party/wayland_standard:libwayland_client",
+  ]
+
+  public_deps = []
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build libilmCommon.so }}}
+
+## Build libilmControl.so {{{
+config("libilmControl_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [ "ivi-layermanagement-api/ilmCommon/include" ]
+
+  cflags = []
+}
+
+config("libilmControl_public_config") {
+  include_dirs = [ "ivi-layermanagement-api/ilmControl/include" ]
+}
+
+ohos_shared_library("libilmControl") {
+  sources = [
+    "ivi-layermanagement-api/ilmControl/src/bitmap.c",
+    "ivi-layermanagement-api/ilmControl/src/ilm_control_wayland_platform.c",
+    "ivi-layermanagement-api/ilmControl/src/writepng.c",
+  ]
+
+  configs = [ ":libilmControl_config" ]
+
+  public_configs = [ ":libilmControl_public_config" ]
+
+  deps = [
+    ":ivi_input_protocol",
+    ":ivi_wm_protocol",
+    "//third_party/libpng:libpng",
+    "//third_party/wayland_standard:libwayland_client",
+  ]
+
+  public_deps = []
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build libilmControl.so }}}
+
+## Build libilmInput.so {{{
+config("libilmInput_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [ "ivi-layermanagement-api/ilmCommon/include" ]
+
+  cflags = []
+}
+
+config("libilmInput_public_config") {
+  include_dirs = [ "ivi-layermanagement-api/ilmInput/include" ]
+}
+
+ohos_shared_library("libilmInput") {
+  sources = [ "ivi-layermanagement-api/ilmInput/src/ilm_input.c" ]
+
+  configs = [ ":libilmInput_config" ]
+
+  public_configs = [ ":libilmInput_public_config" ]
+
+  deps = [
+    ":ivi_input_protocol",
+    ":libilmControl",
+    "//third_party/wayland_standard:libwayland_client",
+  ]
+
+  public_deps = []
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build libilmInput.so }}}
+
+## Build layer-add-surfaces {{{
+config("layer-add-surfaces_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = []
+
+  cflags = []
+}
+
+ohos_executable("layer-add-surfaces") {
+  install_enable = true
+
+  sources = [
+    "ivi-layermanagement-examples/layer-add-surfaces/src/layer-add-surfaces.c",
+  ]
+
+  configs = [ ":layer-add-surfaces_config" ]
+
+  deps = [
+    ":libilmCommon",
+    ":libilmControl",
+    "//third_party/wayland_standard:wayland_core_protocol",
+    "//third_party/weston:ivi_application_protocol",
+  ]
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build layer-add-surfaces }}}
+
+## Build LayerManagerControl {{{
+config("LayerManagerControl_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [ "ivi-layermanagement-examples/LayerManagerControl/include" ]
+
+  cflags = [ "-Wno-header-hygiene" ]
+}
+
+ohos_executable("LayerManagerControl") {
+  install_enable = true
+
+  sources = [
+    "ivi-layermanagement-examples/LayerManagerControl/src/Expression.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/ExpressionInterpreter.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/analyze.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/commands.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/common.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/control.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/input_commands.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/main.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/print.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/sceneio.cpp",
+    "ivi-layermanagement-examples/LayerManagerControl/src/util.cpp",
+  ]
+
+  configs = [ ":LayerManagerControl_config" ]
+
+  deps = [
+    ":libilmCommon",
+    ":libilmControl",
+    ":libilmInput",
+    "//third_party/wayland_standard:wayland_core_protocol",
+    "//third_party/weston:ivi_application_protocol",
+  ]
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build LayerManagerControl }}}
+
+## Build simple-weston-client {{{
+config("simple-weston-client_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [ "//third_party/bounds_checking_function/include" ]
+
+  cflags = [
+    "-Wall",
+    "-Werror",
+    "-Wno-unused-function",
+    "-Wno-unused-variable",
+  ]
+}
+
+ohos_executable("simple-weston-client") {
+  install_enable = true
+
+  sources = [ "ivi-layermanagement-examples/simple-weston-client/src/simple-weston-client.c" ]
+
+  configs = [
+    ":simple-weston-client_config",
+    "//third_party/libdrm:libdrm_public_config",
+  ]
+
+  deps = [
+    "//third_party/wayland-protocols_standard:linux_dmabuf_unstable_v1_protocol",
+    "//third_party/wayland-protocols_standard:viewporter_protocol",
+    "//third_party/wayland_standard:libwayland_client",
+    "//third_party/wayland_standard:libwayland_cursor",
+    "//third_party/wayland_standard:wayland_core_protocol",
+    "//third_party/weston:ivi_application_protocol",
+    "//third_party/weston:libweston",
+    "//utils/native/base:utils",
+  ]
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build simple-weston-client }}}
+
+## Build libscreen-info-module.so {{{
+config("libscreen-info-module_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [
+    "//third_party/weston/compositor",
+    "//third_party/weston/include",
+    "//third_party/weston/ivi-shell",
+  ]
+
+  cflags = []
+}
+
+config("libscreen-info-module_public_config") {
+  include_dirs = [ "screen-info/module" ]
+}
+
+ohos_shared_library("libscreen-info-module") {
+  sources = [ "screen-info/module/screen-info.c" ]
+
+  configs = [ ":libscreen-info-module_config" ]
+
+  public_configs = [ ":libscreen-info-module_public_config" ]
+
+  deps = [
+    ":ivi-controller",
+    "//third_party/weston:libweston",
+  ]
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build libscreen-info-module.so }}}
+
+## Build libtest-screen-info-module.so {{{
+config("libtest-screen-info-module_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = [
+    "//third_party/weston/compositor",
+    "//third_party/weston/include",
+    "//third_party/weston/ivi-shell",
+  ]
+
+  cflags = []
+}
+
+ohos_shared_library("libtest-screen-info-module") {
+  sources = [ "screen-info/test-module/call-screen-info.c" ]
+
+  configs = [ ":libtest-screen-info-module_config" ]
+
+  deps = [
+    ":ivi-controller",
+    ":libscreen-info-module",
+    ":screen_info_protocol",
+    "//third_party/weston:libweston",
+  ]
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+
+## Build libtest-screen-info-module.so }}}
+
+## Build screen-info-module-test {{{
+config("screen-info-module-test_config") {
+  visibility = [ ":*" ]
+
+  include_dirs = []
+
+  cflags = []
+}
+
+ohos_executable("screen-info-module-test") {
+  install_enable = true
+
+  sources = [ "screen-info/test/main.c" ]
+
+  configs = [ ":screen-info-module-test_config" ]
+
+  deps = [
+    ":screen_info_protocol",
+    "//third_party/wayland_standard:libwayland_client",
+  ]
+
+  part_name = "graphic_standard"
+  subsystem_name = "graphic"
+}
+## Build screen-info-module-test }}}

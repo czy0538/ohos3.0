@@ -1,0 +1,90 @@
+# Copyright (c) Huawei Technologies Co., Ltd. 2021. All rights reserved.
+
+import("//build/ohos.gni")
+
+if (target_cpu == "arm") {
+    config("ffi_config") {
+        visibility = [ ":*" ]
+
+        include_dirs = [
+            ".",
+            "./include",
+            "./src/arm",
+        ]
+
+        cflags = [
+            "-DTARGET=ARM",
+            "-Wno-sign-compare",
+            "-Wno-implicit-function-declaration",
+            "-Wno-extern-initializer",
+        ]
+    }
+
+    ohos_source_set("ffi_source") {
+        sources = [
+            "src/prep_cif.c",
+            "src/types.c",
+            "src/raw_api.c",
+            "src/java_raw_api.c",
+            "src/closures.c",
+            "src/arm/ffi.c",
+            "src/arm/sysv.S",
+        ]
+
+        configs = [
+            ":ffi_config",
+        ]
+    }
+} else {
+    config("ffi_config") {
+        visibility = [ ":*" ]
+
+        include_dirs = [
+            ".",
+            "./include",
+            "./src/aarch64",
+        ]
+
+        cflags = [
+            "-DTARGET=AARCH64",
+            "-Wno-sign-compare",
+            "-Wno-implicit-function-declaration",
+            "-Wno-extern-initializer",
+        ]
+    }
+
+    ohos_source_set("ffi_source") {
+        sources = [
+            "src/prep_cif.c",
+            "src/types.c",
+            "src/raw_api.c",
+            "src/java_raw_api.c",
+            "src/closures.c",
+            "src/aarch64/ffi.c",
+            "src/aarch64/sysv.S",
+        ]
+
+        configs = [
+            ":ffi_config",
+        ]
+    }
+}
+
+config("ffi_public_config") {
+    include_dirs = [
+        "include",
+    ]
+}
+
+ohos_shared_library("ffi") {
+    deps = [
+        ":ffi_source",
+    ]
+
+    public_configs = [
+        ":ffi_public_config",
+    ]
+
+    part_name = "multimedia_histreamer"
+    subsystem_name = "multimedia"
+}

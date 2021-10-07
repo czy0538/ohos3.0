@@ -1,0 +1,9 @@
+{
+  "root_path": "/home/czy/ohos3.0",
+  "board": "hispark_taurus",
+  "kernel": "liteos_a",
+  "product": "ipcamera_hispark_taurus",
+  "product_path": "/home/czy/ohos3.0/vendor/hisilicon/hispark_taurus",
+  "device_path": "/home/czy/ohos3.0/device/hisilicon/hispark_taurus/sdk_liteos",
+  "patch_cache": null
+}

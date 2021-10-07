@@ -1,0 +1,63 @@
+all: $(MAKE_TARGETS)
+	@if [ -d speculative ]; then $(MAKE) -C speculative all; fi
+
+clean:
+	rm -f $(MAKE_TARGETS) logfile* run.sh *.core
+	@if [ -d speculative ]; then $(MAKE) -C speculative clean; fi
+
+install: $(INSTALL_DIR) run.sh
+	set -e; for file in $(INSTALL_TARGETS) run.sh; do	\
+		if [ -f "$$file" ] ; then			\
+			install -m 00755 $$file		\
+				$(INSTALL_DIR)/$$file;	\
+		fi;						\
+	done
+	@if [ -d speculative ]; then $(MAKE) -C speculative install; fi
+
+test: run.sh
+	@./run.sh
+
+$(INSTALL_DIR):
+	mkdir -p $@
+
+run.sh:
+	@echo '#!/bin/sh' > $@
+	@echo "$(top_srcdir)/bin/run-tests.sh $(subdir) $(INSTALL_TARGETS)" >> $@
+	@chmod +x run.sh
+
+pthread_getschedparam_1-1.run-test: $(srcdir)/1-1.c
+	@if $(CC)  $(CFLAGS) $(LDFLAGS) -o $@ $(srcdir)/1-1.c $(LDLIBS) > logfile.$$$$ 2>&1; then \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/1-1 compile PASSED"; \
+		 echo "$(subdir)/1-1 compile PASSED" >> $(LOGFILE); \
+	else \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/1-1 compile FAILED; SKIPPING"; \
+		(echo "$(subdir)/1-1 compile FAILED; SKIPPING"; cat logfile.$$$$) >> $(LOGFILE); \
+	fi; \
+	rm -f logfile.$$$$
+
+pthread_getschedparam_1-2.run-test: $(srcdir)/1-2.c
+	@if $(CC)  $(CFLAGS) $(LDFLAGS) -o $@ $(srcdir)/1-2.c $(LDLIBS) > logfile.$$$$ 2>&1; then \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/1-2 compile PASSED"; \
+		 echo "$(subdir)/1-2 compile PASSED" >> $(LOGFILE); \
+	else \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/1-2 compile FAILED; SKIPPING"; \
+		(echo "$(subdir)/1-2 compile FAILED; SKIPPING"; cat logfile.$$$$) >> $(LOGFILE); \
+	fi; \
+	rm -f logfile.$$$$
+
+pthread_getschedparam_1-3.run-test: $(srcdir)/1-3.c
+	@if $(CC)  $(CFLAGS) $(LDFLAGS) -o $@ $(srcdir)/1-3.c $(LDLIBS) > logfile.$$$$ 2>&1; then \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/1-3 compile PASSED"; \
+		 echo "$(subdir)/1-3 compile PASSED" >> $(LOGFILE); \
+	else \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/1-3 compile FAILED; SKIPPING"; \
+		(echo "$(subdir)/1-3 compile FAILED; SKIPPING"; cat logfile.$$$$) >> $(LOGFILE); \
+	fi; \
+	rm -f logfile.$$$$
+

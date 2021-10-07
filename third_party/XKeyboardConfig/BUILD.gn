@@ -1,0 +1,1746 @@
+import("//build/ohos.gni")
+ohos_prebuilt_etc("conf_xkb_geometry_sgi_vndr_indy") {
+  source = "build/usr/local/share/X11/xkb/geometry/sgi_vndr/indy"
+  relative_install_dir = "xkb/geometry/sgi_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_sgi_vndr_O2") {
+  source = "build/usr/local/share/X11/xkb/geometry/sgi_vndr/O2"
+  relative_install_dir = "xkb/geometry/sgi_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_sgi_vndr_indigo") {
+  source = "build/usr/local/share/X11/xkb/geometry/sgi_vndr/indigo"
+  relative_install_dir = "xkb/geometry/sgi_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_dell") {
+  source = "build/usr/local/share/X11/xkb/geometry/dell"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_nec") {
+  source = "build/usr/local/share/X11/xkb/geometry/nec"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_kinesis") {
+  source = "build/usr/local/share/X11/xkb/geometry/kinesis"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_ataritt") {
+  source = "build/usr/local/share/X11/xkb/geometry/ataritt"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_steelseries") {
+  source = "build/usr/local/share/X11/xkb/geometry/steelseries"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_typematrix") {
+  source = "build/usr/local/share/X11/xkb/geometry/typematrix"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_hhk") {
+  source = "build/usr/local/share/X11/xkb/geometry/hhk"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_winbook") {
+  source = "build/usr/local/share/X11/xkb/geometry/winbook"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_fujitsu") {
+  source = "build/usr/local/share/X11/xkb/geometry/fujitsu"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_teck") {
+  source = "build/usr/local/share/X11/xkb/geometry/teck"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_README") {
+  source = "build/usr/local/share/X11/xkb/geometry/README"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_digital_vndr_lk") {
+  source = "build/usr/local/share/X11/xkb/geometry/digital_vndr/lk"
+  relative_install_dir = "xkb/geometry/digital_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_digital_vndr_pc") {
+  source = "build/usr/local/share/X11/xkb/geometry/digital_vndr/pc"
+  relative_install_dir = "xkb/geometry/digital_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_digital_vndr_unix") {
+  source = "build/usr/local/share/X11/xkb/geometry/digital_vndr/unix"
+  relative_install_dir = "xkb/geometry/digital_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_sun") {
+  source = "build/usr/local/share/X11/xkb/geometry/sun"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_northgate") {
+  source = "build/usr/local/share/X11/xkb/geometry/northgate"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_sony") {
+  source = "build/usr/local/share/X11/xkb/geometry/sony"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_keytronic") {
+  source = "build/usr/local/share/X11/xkb/geometry/keytronic"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_amiga") {
+  source = "build/usr/local/share/X11/xkb/geometry/amiga"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_sanwa") {
+  source = "build/usr/local/share/X11/xkb/geometry/sanwa"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_hp") {
+  source = "build/usr/local/share/X11/xkb/geometry/hp"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_macintosh") {
+  source = "build/usr/local/share/X11/xkb/geometry/macintosh"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_everex") {
+  source = "build/usr/local/share/X11/xkb/geometry/everex"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_chicony") {
+  source = "build/usr/local/share/X11/xkb/geometry/chicony"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_nokia") {
+  source = "build/usr/local/share/X11/xkb/geometry/nokia"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_microsoft") {
+  source = "build/usr/local/share/X11/xkb/geometry/microsoft"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_thinkpad") {
+  source = "build/usr/local/share/X11/xkb/geometry/thinkpad"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_geometry_pc") {
+  source = "build/usr/local/share/X11/xkb/geometry/pc"
+  relative_install_dir = "xkb/geometry"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_iso9995") {
+  source = "build/usr/local/share/X11/xkb/compat/iso9995"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_xfree86") {
+  source = "build/usr/local/share/X11/xkb/compat/xfree86"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_basic") {
+  source = "build/usr/local/share/X11/xkb/compat/basic"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_mousekeys") {
+  source = "build/usr/local/share/X11/xkb/compat/mousekeys"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_pc98") {
+  source = "build/usr/local/share/X11/xkb/compat/pc98"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_ledcompose") {
+  source = "build/usr/local/share/X11/xkb/compat/ledcompose"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_lednum") {
+  source = "build/usr/local/share/X11/xkb/compat/lednum"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_caps") {
+  source = "build/usr/local/share/X11/xkb/compat/caps"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_README") {
+  source = "build/usr/local/share/X11/xkb/compat/README"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_japan") {
+  source = "build/usr/local/share/X11/xkb/compat/japan"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_olpc") {
+  source = "build/usr/local/share/X11/xkb/compat/olpc"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_ledscroll") {
+  source = "build/usr/local/share/X11/xkb/compat/ledscroll"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_misc") {
+  source = "build/usr/local/share/X11/xkb/compat/misc"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_xtest") {
+  source = "build/usr/local/share/X11/xkb/compat/xtest"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_complete") {
+  source = "build/usr/local/share/X11/xkb/compat/complete"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_ledcaps") {
+  source = "build/usr/local/share/X11/xkb/compat/ledcaps"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_accessx") {
+  source = "build/usr/local/share/X11/xkb/compat/accessx"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_level5") {
+  source = "build/usr/local/share/X11/xkb/compat/level5"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_compat_pc") {
+  source = "build/usr/local/share/X11/xkb/compat/pc"
+  relative_install_dir = "xkb/compat"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_iso9995") {
+  source = "build/usr/local/share/X11/xkb/types/iso9995"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_basic") {
+  source = "build/usr/local/share/X11/xkb/types/basic"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_cancel") {
+  source = "build/usr/local/share/X11/xkb/types/cancel"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_mousekeys") {
+  source = "build/usr/local/share/X11/xkb/types/mousekeys"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_numpad") {
+  source = "build/usr/local/share/X11/xkb/types/numpad"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_caps") {
+  source = "build/usr/local/share/X11/xkb/types/caps"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_README") {
+  source = "build/usr/local/share/X11/xkb/types/README"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_complete") {
+  source = "build/usr/local/share/X11/xkb/types/complete"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_default") {
+  source = "build/usr/local/share/X11/xkb/types/default"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_nokia") {
+  source = "build/usr/local/share/X11/xkb/types/nokia"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_extra") {
+  source = "build/usr/local/share/X11/xkb/types/extra"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_level5") {
+  source = "build/usr/local/share/X11/xkb/types/level5"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_types_pc") {
+  source = "build/usr/local/share/X11/xkb/types/pc"
+  relative_install_dir = "xkb/types"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_xfree86") {
+  source = "build/usr/local/share/X11/xkb/keycodes/xfree86"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_evdev") {
+  source = "build/usr/local/share/X11/xkb/keycodes/evdev"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_sgi_vndr_iris") {
+  source = "build/usr/local/share/X11/xkb/keycodes/sgi_vndr/iris"
+  relative_install_dir = "xkb/keycodes/sgi_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_sgi_vndr_indy") {
+  source = "build/usr/local/share/X11/xkb/keycodes/sgi_vndr/indy"
+  relative_install_dir = "xkb/keycodes/sgi_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_sgi_vndr_indigo") {
+  source = "build/usr/local/share/X11/xkb/keycodes/sgi_vndr/indigo"
+  relative_install_dir = "xkb/keycodes/sgi_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_ataritt") {
+  source = "build/usr/local/share/X11/xkb/keycodes/ataritt"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_xfree98") {
+  source = "build/usr/local/share/X11/xkb/keycodes/xfree98"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_jolla") {
+  source = "build/usr/local/share/X11/xkb/keycodes/jolla"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_fujitsu") {
+  source = "build/usr/local/share/X11/xkb/keycodes/fujitsu"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_ibm") {
+  source = "build/usr/local/share/X11/xkb/keycodes/ibm"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_README") {
+  source = "build/usr/local/share/X11/xkb/keycodes/README"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_digital_vndr_lk") {
+  source = "build/usr/local/share/X11/xkb/keycodes/digital_vndr/lk"
+  relative_install_dir = "xkb/keycodes/digital_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_digital_vndr_pc") {
+  source = "build/usr/local/share/X11/xkb/keycodes/digital_vndr/pc"
+  relative_install_dir = "xkb/keycodes/digital_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_sun") {
+  source = "build/usr/local/share/X11/xkb/keycodes/sun"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_sony") {
+  source = "build/usr/local/share/X11/xkb/keycodes/sony"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_empty") {
+  source = "build/usr/local/share/X11/xkb/keycodes/empty"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_olpc") {
+  source = "build/usr/local/share/X11/xkb/keycodes/olpc"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_amiga") {
+  source = "build/usr/local/share/X11/xkb/keycodes/amiga"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_aliases") {
+  source = "build/usr/local/share/X11/xkb/keycodes/aliases"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_hp") {
+  source = "build/usr/local/share/X11/xkb/keycodes/hp"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_keycodes_macintosh") {
+  source = "build/usr/local/share/X11/xkb/keycodes/macintosh"
+  relative_install_dir = "xkb/keycodes"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_evdev.xml") {
+  source = "build/usr/local/share/X11/xkb/rules/evdev.xml"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_evdev") {
+  source = "build/usr/local/share/X11/xkb/rules/evdev"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_xkb.dtd") {
+  source = "build/usr/local/share/X11/xkb/rules/xkb.dtd"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_xfree98") {
+  source = "build/usr/local/share/X11/xkb/rules/xfree98"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_base.lst") {
+  source = "build/usr/local/share/X11/xkb/rules/base.lst"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_base") {
+  source = "build/usr/local/share/X11/xkb/rules/base"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_evdev.lst") {
+  source = "build/usr/local/share/X11/xkb/rules/evdev.lst"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_README") {
+  source = "build/usr/local/share/X11/xkb/rules/README"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_base.extras.xml") {
+  source = "build/usr/local/share/X11/xkb/rules/base.extras.xml"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_base.xml") {
+  source = "build/usr/local/share/X11/xkb/rules/base.xml"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_evdev.extras.xml") {
+  source = "build/usr/local/share/X11/xkb/rules/evdev.extras.xml"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_xorg") {
+  source = "build/usr/local/share/X11/xkb/rules/xorg"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_xorg.lst") {
+  source = "build/usr/local/share/X11/xkb/rules/xorg.lst"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_rules_xorg.xml") {
+  source = "build/usr/local/share/X11/xkb/rules/xorg.xml"
+  relative_install_dir = "xkb/rules"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_kg") {
+  source = "build/usr/local/share/X11/xkb/symbols/kg"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ru") {
+  source = "build/usr/local/share/X11/xkb/symbols/ru"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_af") {
+  source = "build/usr/local/share/X11/xkb/symbols/af"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_az") {
+  source = "build/usr/local/share/X11/xkb/symbols/az"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_epo") {
+  source = "build/usr/local/share/X11/xkb/symbols/epo"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sy") {
+  source = "build/usr/local/share/X11/xkb/symbols/sy"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_brai") {
+  source = "build/usr/local/share/X11/xkb/symbols/brai"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_pk") {
+  source = "build/usr/local/share/X11/xkb/symbols/pk"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_za") {
+  source = "build/usr/local/share/X11/xkb/symbols/za"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_am") {
+  source = "build/usr/local/share/X11/xkb/symbols/am"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_hu") {
+  source = "build/usr/local/share/X11/xkb/symbols/hu"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_kpdl") {
+  source = "build/usr/local/share/X11/xkb/symbols/kpdl"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sgi_vndr_jp") {
+  source = "build/usr/local/share/X11/xkb/symbols/sgi_vndr/jp"
+  relative_install_dir = "xkb/symbols/sgi_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_cz") {
+  source = "build/usr/local/share/X11/xkb/symbols/cz"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_level3") {
+  source = "build/usr/local/share/X11/xkb/symbols/level3"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_my") {
+  source = "build/usr/local/share/X11/xkb/symbols/my"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_bt") {
+  source = "build/usr/local/share/X11/xkb/symbols/bt"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_np") {
+  source = "build/usr/local/share/X11/xkb/symbols/np"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_lk") {
+  source = "build/usr/local/share/X11/xkb/symbols/lk"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ie") {
+  source = "build/usr/local/share/X11/xkb/symbols/ie"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_apple") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/apple"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_jp") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/jp"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_us") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/us"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_dk") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/dk"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_ch") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/ch"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_it") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/it"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_nl") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/nl"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_no") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/no"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_latam") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/latam"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_fr") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/fr"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_se") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/se"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_fi") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/fi"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_de") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/de"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_pt") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/pt"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_gb") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/gb"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_macintosh_vndr_is") {
+  source = "build/usr/local/share/X11/xkb/symbols/macintosh_vndr/is"
+  relative_install_dir = "xkb/symbols/macintosh_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_kr") {
+  source = "build/usr/local/share/X11/xkb/symbols/kr"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_terminate") {
+  source = "build/usr/local/share/X11/xkb/symbols/terminate"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_parens") {
+  source = "build/usr/local/share/X11/xkb/symbols/parens"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_md") {
+  source = "build/usr/local/share/X11/xkb/symbols/md"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ma") {
+  source = "build/usr/local/share/X11/xkb/symbols/ma"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sk") {
+  source = "build/usr/local/share/X11/xkb/symbols/sk"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_uz") {
+  source = "build/usr/local/share/X11/xkb/symbols/uz"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_mk") {
+  source = "build/usr/local/share/X11/xkb/symbols/mk"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_fo") {
+  source = "build/usr/local/share/X11/xkb/symbols/fo"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_apl") {
+  source = "build/usr/local/share/X11/xkb/symbols/apl"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_by") {
+  source = "build/usr/local/share/X11/xkb/symbols/by"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_jp") {
+  source = "build/usr/local/share/X11/xkb/symbols/jp"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_rupeesign") {
+  source = "build/usr/local/share/X11/xkb/symbols/rupeesign"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_eu") {
+  source = "build/usr/local/share/X11/xkb/symbols/eu"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_tw") {
+  source = "build/usr/local/share/X11/xkb/symbols/tw"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_srvr_ctrl") {
+  source = "build/usr/local/share/X11/xkb/symbols/srvr_ctrl"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_tm") {
+  source = "build/usr/local/share/X11/xkb/symbols/tm"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_at") {
+  source = "build/usr/local/share/X11/xkb/symbols/at"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_il") {
+  source = "build/usr/local/share/X11/xkb/symbols/il"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_in") {
+  source = "build/usr/local/share/X11/xkb/symbols/in"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sony_vndr_us") {
+  source = "build/usr/local/share/X11/xkb/symbols/sony_vndr/us"
+  relative_install_dir = "xkb/symbols/sony_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_fujitsu_vndr_jp") {
+  source = "build/usr/local/share/X11/xkb/symbols/fujitsu_vndr/jp"
+  relative_install_dir = "xkb/symbols/fujitsu_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_fujitsu_vndr_us") {
+  source = "build/usr/local/share/X11/xkb/symbols/fujitsu_vndr/us"
+  relative_install_dir = "xkb/symbols/fujitsu_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ua") {
+  source = "build/usr/local/share/X11/xkb/symbols/ua"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_th") {
+  source = "build/usr/local/share/X11/xkb/symbols/th"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_mao") {
+  source = "build/usr/local/share/X11/xkb/symbols/mao"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_trans") {
+  source = "build/usr/local/share/X11/xkb/symbols/trans"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ge") {
+  source = "build/usr/local/share/X11/xkb/symbols/ge"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_lv") {
+  source = "build/usr/local/share/X11/xkb/symbols/lv"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_rs") {
+  source = "build/usr/local/share/X11/xkb/symbols/rs"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_tg") {
+  source = "build/usr/local/share/X11/xkb/symbols/tg"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_hr") {
+  source = "build/usr/local/share/X11/xkb/symbols/hr"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sn") {
+  source = "build/usr/local/share/X11/xkb/symbols/sn"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_ru") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/ru"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_cz") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/cz"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_kr") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/kr"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_sk") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/sk"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_jp") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/jp"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_solaris") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/solaris"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_tw") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/tw"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_ua") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/ua"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_lv") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/lv"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_lt") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/lt"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_br") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/br"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_be") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/be"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_us") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/us"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_dk") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/dk"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_ch") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/ch"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_it") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/it"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_pl") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/pl"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_nl") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/nl"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_no") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/no"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_gr") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/gr"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_fr") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/fr"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_se") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/se"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_ro") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/ro"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_ca") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/ca"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_fi") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/fi"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_de") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/de"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_ara") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/ara"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_pt") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/pt"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_gb") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/gb"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_ee") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/ee"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_es") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/es"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sun_vndr_tr") {
+  source = "build/usr/local/share/X11/xkb/symbols/sun_vndr/tr"
+  relative_install_dir = "xkb/symbols/sun_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_jolla_vndr_sbj") {
+  source = "build/usr/local/share/X11/xkb/symbols/jolla_vndr/sbj"
+  relative_install_dir = "xkb/symbols/jolla_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sharp_vndr_ws020sh") {
+  source = "build/usr/local/share/X11/xkb/symbols/sharp_vndr/ws020sh"
+  relative_install_dir = "xkb/symbols/sharp_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sharp_vndr_sl-c3x00") {
+  source = "build/usr/local/share/X11/xkb/symbols/sharp_vndr/sl-c3x00"
+  relative_install_dir = "xkb/symbols/sharp_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sharp_vndr_ws007sh") {
+  source = "build/usr/local/share/X11/xkb/symbols/sharp_vndr/ws007sh"
+  relative_install_dir = "xkb/symbols/sharp_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sharp_vndr_ws011sh") {
+  source = "build/usr/local/share/X11/xkb/symbols/sharp_vndr/ws011sh"
+  relative_install_dir = "xkb/symbols/sharp_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_sharp_vndr_ws003sh") {
+  source = "build/usr/local/share/X11/xkb/symbols/sharp_vndr/ws003sh"
+  relative_install_dir = "xkb/symbols/sharp_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_lt") {
+  source = "build/usr/local/share/X11/xkb/symbols/lt"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_kz") {
+  source = "build/usr/local/share/X11/xkb/symbols/kz"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_mt") {
+  source = "build/usr/local/share/X11/xkb/symbols/mt"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_br") {
+  source = "build/usr/local/share/X11/xkb/symbols/br"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_be") {
+  source = "build/usr/local/share/X11/xkb/symbols/be"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_tj") {
+  source = "build/usr/local/share/X11/xkb/symbols/tj"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ph") {
+  source = "build/usr/local/share/X11/xkb/symbols/ph"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_cn") {
+  source = "build/usr/local/share/X11/xkb/symbols/cn"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_digital_vndr_lk") {
+  source = "build/usr/local/share/X11/xkb/symbols/digital_vndr/lk"
+  relative_install_dir = "xkb/symbols/digital_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_digital_vndr_us") {
+  source = "build/usr/local/share/X11/xkb/symbols/digital_vndr/us"
+  relative_install_dir = "xkb/symbols/digital_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_digital_vndr_vt") {
+  source = "build/usr/local/share/X11/xkb/symbols/digital_vndr/vt"
+  relative_install_dir = "xkb/symbols/digital_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_digital_vndr_pc") {
+  source = "build/usr/local/share/X11/xkb/symbols/digital_vndr/pc"
+  relative_install_dir = "xkb/symbols/digital_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_us") {
+  source = "build/usr/local/share/X11/xkb/symbols/us"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_dk") {
+  source = "build/usr/local/share/X11/xkb/symbols/dk"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_shift") {
+  source = "build/usr/local/share/X11/xkb/symbols/shift"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_al") {
+  source = "build/usr/local/share/X11/xkb/symbols/al"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ch") {
+  source = "build/usr/local/share/X11/xkb/symbols/ch"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_tz") {
+  source = "build/usr/local/share/X11/xkb/symbols/tz"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_it") {
+  source = "build/usr/local/share/X11/xkb/symbols/it"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_eg") {
+  source = "build/usr/local/share/X11/xkb/symbols/eg"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_pl") {
+  source = "build/usr/local/share/X11/xkb/symbols/pl"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ml") {
+  source = "build/usr/local/share/X11/xkb/symbols/ml"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_cd") {
+  source = "build/usr/local/share/X11/xkb/symbols/cd"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_dz") {
+  source = "build/usr/local/share/X11/xkb/symbols/dz"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_empty") {
+  source = "build/usr/local/share/X11/xkb/symbols/empty"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_gn") {
+  source = "build/usr/local/share/X11/xkb/symbols/gn"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_nl") {
+  source = "build/usr/local/share/X11/xkb/symbols/nl"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_olpc") {
+  source = "build/usr/local/share/X11/xkb/symbols/olpc"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ir") {
+  source = "build/usr/local/share/X11/xkb/symbols/ir"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_no") {
+  source = "build/usr/local/share/X11/xkb/symbols/no"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_cm") {
+  source = "build/usr/local/share/X11/xkb/symbols/cm"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_inet") {
+  source = "build/usr/local/share/X11/xkb/symbols/inet"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_iq") {
+  source = "build/usr/local/share/X11/xkb/symbols/iq"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_keypad") {
+  source = "build/usr/local/share/X11/xkb/symbols/keypad"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_latam") {
+  source = "build/usr/local/share/X11/xkb/symbols/latam"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_gr") {
+  source = "build/usr/local/share/X11/xkb/symbols/gr"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_et") {
+  source = "build/usr/local/share/X11/xkb/symbols/et"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_fr") {
+  source = "build/usr/local/share/X11/xkb/symbols/fr"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_compose") {
+  source = "build/usr/local/share/X11/xkb/symbols/compose"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ba") {
+  source = "build/usr/local/share/X11/xkb/symbols/ba"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_vn") {
+  source = "build/usr/local/share/X11/xkb/symbols/vn"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_se") {
+  source = "build/usr/local/share/X11/xkb/symbols/se"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ro") {
+  source = "build/usr/local/share/X11/xkb/symbols/ro"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_latin") {
+  source = "build/usr/local/share/X11/xkb/symbols/latin"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_eurosign") {
+  source = "build/usr/local/share/X11/xkb/symbols/eurosign"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ca") {
+  source = "build/usr/local/share/X11/xkb/symbols/ca"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_gh") {
+  source = "build/usr/local/share/X11/xkb/symbols/gh"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_fi") {
+  source = "build/usr/local/share/X11/xkb/symbols/fi"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_de") {
+  source = "build/usr/local/share/X11/xkb/symbols/de"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_hp_vndr_us") {
+  source = "build/usr/local/share/X11/xkb/symbols/hp_vndr/us"
+  relative_install_dir = "xkb/symbols/hp_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_nbsp") {
+  source = "build/usr/local/share/X11/xkb/symbols/nbsp"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_mn") {
+  source = "build/usr/local/share/X11/xkb/symbols/mn"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_jv") {
+  source = "build/usr/local/share/X11/xkb/symbols/jv"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_bd") {
+  source = "build/usr/local/share/X11/xkb/symbols/bd"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_mv") {
+  source = "build/usr/local/share/X11/xkb/symbols/mv"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ara") {
+  source = "build/usr/local/share/X11/xkb/symbols/ara"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_xfree68_vndr_ataritt") {
+  source = "build/usr/local/share/X11/xkb/symbols/xfree68_vndr/ataritt"
+  relative_install_dir = "xkb/symbols/xfree68_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_xfree68_vndr_amiga") {
+  source = "build/usr/local/share/X11/xkb/symbols/xfree68_vndr/amiga"
+  relative_install_dir = "xkb/symbols/xfree68_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_mm") {
+  source = "build/usr/local/share/X11/xkb/symbols/mm"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_me") {
+  source = "build/usr/local/share/X11/xkb/symbols/me"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_capslock") {
+  source = "build/usr/local/share/X11/xkb/symbols/capslock"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_group") {
+  source = "build/usr/local/share/X11/xkb/symbols/group"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ctrl") {
+  source = "build/usr/local/share/X11/xkb/symbols/ctrl"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_bg") {
+  source = "build/usr/local/share/X11/xkb/symbols/bg"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_pt") {
+  source = "build/usr/local/share/X11/xkb/symbols/pt"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_bw") {
+  source = "build/usr/local/share/X11/xkb/symbols/bw"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_gb") {
+  source = "build/usr/local/share/X11/xkb/symbols/gb"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ke") {
+  source = "build/usr/local/share/X11/xkb/symbols/ke"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ee") {
+  source = "build/usr/local/share/X11/xkb/symbols/ee"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_es") {
+  source = "build/usr/local/share/X11/xkb/symbols/es"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_au") {
+  source = "build/usr/local/share/X11/xkb/symbols/au"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_ng") {
+  source = "build/usr/local/share/X11/xkb/symbols/ng"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_si") {
+  source = "build/usr/local/share/X11/xkb/symbols/si"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_la") {
+  source = "build/usr/local/share/X11/xkb/symbols/la"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_id") {
+  source = "build/usr/local/share/X11/xkb/symbols/id"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_kh") {
+  source = "build/usr/local/share/X11/xkb/symbols/kh"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_typo") {
+  source = "build/usr/local/share/X11/xkb/symbols/typo"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_level5") {
+  source = "build/usr/local/share/X11/xkb/symbols/level5"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_altwin") {
+  source = "build/usr/local/share/X11/xkb/symbols/altwin"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_pc") {
+  source = "build/usr/local/share/X11/xkb/symbols/pc"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_tr") {
+  source = "build/usr/local/share/X11/xkb/symbols/tr"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_nec_vndr_jp") {
+  source = "build/usr/local/share/X11/xkb/symbols/nec_vndr/jp"
+  relative_install_dir = "xkb/symbols/nec_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_is") {
+  source = "build/usr/local/share/X11/xkb/symbols/is"
+  relative_install_dir = "xkb/symbols"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_nokia_vndr_su-8w") {
+  source = "build/usr/local/share/X11/xkb/symbols/nokia_vndr/su-8w"
+  relative_install_dir = "xkb/symbols/nokia_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_nokia_vndr_rx-44") {
+  source = "build/usr/local/share/X11/xkb/symbols/nokia_vndr/rx-44"
+  relative_install_dir = "xkb/symbols/nokia_vndr"
+  part_name = "multimodalinput_base"
+}
+
+ohos_prebuilt_etc("conf_xkb_symbols_nokia_vndr_rx-51") {
+  source = "build/usr/local/share/X11/xkb/symbols/nokia_vndr/rx-51"
+  relative_install_dir = "xkb/symbols/nokia_vndr"
+  part_name = "multimodalinput_base"
+}

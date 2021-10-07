@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "ohos_init.h": "c",
+        "wifi_connecter.h": "c"
+    }
+}
