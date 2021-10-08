@@ -16,6 +16,7 @@
                 "start foundation",
                 "start bundle_daemon",
                 "start appspawn",
+                "start media_server",
                 "start wms_server",
                 "start shell"
             ]
@@ -25,6 +26,9 @@
                 "start apphilogcat",
                 "start hiview",
                 "start deviceauth_service",
+                "start sensor_service",
+                "start ai_server",
+                "start softbus_server"
             ]
        }, {
             "name" : "post-init",
@@ -84,7 +88,15 @@
             "once" : 1,
             "importance" : 0,
             "caps" : []
-        },  {
+        }, {
+            "name" : "media_server",
+            "path" : ["/bin/media_server"],
+            "uid" : 0,
+            "gid" : 0,
+            "once" : 1,
+            "importance" : 0,
+            "caps" : []
+        }, {
             "name" : "wms_server",
             "path" : ["/bin/wms_server"],
             "uid" : 0,
@@ -108,7 +120,23 @@
             "once" : 1,
             "importance" : 0,
             "caps" : []
-        },{
+        }, {
+	    "name" : "sensor_service",
+            "path" : ["/bin/sensor_service"],
+            "uid" : 0,
+            "gid" : 0,
+            "once" : 0,
+            "importance" : 0,
+            "caps" : []
+	    }, {
+            "name" : "ai_server",
+            "path" : ["/bin/ai_server"],
+            "uid" : 2,
+            "gid" : 2,
+            "once" : 0,
+            "importance" : 0,
+            "caps" : []
+        }, {
             "name" : "softbus_server",
             "path" : ["/bin/softbus_server"],
             "uid" : 0,
