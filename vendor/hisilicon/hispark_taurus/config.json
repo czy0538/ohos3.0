@@ -43,22 +43,6 @@
         ]
       },
       {
-        "subsystem": "graphic",
-        "components": [
-          { "component": "graphic_utils", "features":[] },
-          { "component": "graphic_hals", "features":[] },
-          { "component": "ui", "features":[ "enable_graphic_font = true" ] },
-          { "component": "surface", "features":[] },
-          { "component": "wms", "features":[] }
-        ]
-      },
-      {
-        "subsystem": "sensors",
-        "components": [
-          { "component": "sensor_lite", "features":[] }
-        ]
-      },
-      {
         "subsystem": "startup",
         "components": [
           { "component": "syspara_lite", "features":[] },
@@ -82,21 +66,12 @@
         ]
       },
       {
-        "subsystem": "ace",
-        "components": [
-          { "component": "ace_engine_lite", "features":[ "" ] }
-        ]
-      },
-      {
         "subsystem": "drivers",
         "components": [
           { "component": "drivers_framework", "features":[] },
           { "component": "adapter_uhdf", "features":[] },
-          { "component": "peripheral_display", "features":[] },
           { "component": "peripheral_input", "features":[] },
-          { "component": "peripheral_sensor", "features":[] },
           { "component": "peripheral_wlan", "features":[] },
-          { "component": "peripheral_misc", "features":[] },
           { "component": "peripheral_usb", "features":[] }
         ]
       },
@@ -125,13 +100,6 @@
         "components": [
           { "component": "kv_store", "features":[] },
           { "component": "os_dump", "features":[] }
-        ]
-      },
-      {
-        "subsystem": "powermgr",
-        "components": [
-          { "component": "powermgr_lite", "features":[ "enable_screensaver = true" ] },
-          { "component": "battery_lite", "features":[ "enable_screensaver = true" ] }
         ]
       }
     ],
