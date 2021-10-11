@@ -1,0 +1,18 @@
+import("//build/lite/config/component/lite_component.gni")
+lite_component("softbus_publish") {
+  features = [ ":softbus" ]
+}
+executable("softbus") {
+  output_name = "softbus"
+  sources = [ "softbus_discovery.c" ]
+  deps=["//foundation/communication/dsoftbus:dsoftbus",]
+  include_dirs = [
+    "//foundation/communication/dsoftbus/interfaces/kits/discovery",
+    "//foundation/communication/dsoftbus/interfaces/kits/transport",
+    "//foundation/communication/dsoftbus/interfaces/kits/common",
+    "//foundation/communication/dsoftbus/interfaces/kits/bus_center",
+  ]
+  defines = []
+  cflags_c = []
+  ldflags = []
+}

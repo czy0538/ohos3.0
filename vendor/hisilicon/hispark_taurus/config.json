@@ -15,7 +15,8 @@
       {
         "subsystem": "applications",
         "components": [
-          { "component": "camera_sample_communication", "features":[] }
+          { "component": "camera_sample_communication", "features":[] },
+          { "component": "softbus_publish_app", "features":[] }
         ]
       },
       {
