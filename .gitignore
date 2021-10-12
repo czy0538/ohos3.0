@@ -88,3 +88,4 @@ developtools/
 out/
 prebuilts/
 applications/sample/camera/prebuilts/
+.ccache/
