@@ -1,10 +1,10 @@
 import("//build/lite/config/component/lite_component.gni")
-lite_component("softbus_publish") {
-  features = [ ":softbusPublish" ]
+lite_component("softbus_discovery") {
+  features = [ ":softbusDiscovery" ]
 }
-executable("softbusPublish") {
-  output_name = "softbusPublish"
-  sources = [ "softbus_publishservise.c" ]
+executable("softbusDiscovery") {
+  output_name = "softbusDiscovery"
+  sources = [ "softbus_discovery.c" ]
   deps=["//foundation/communication/dsoftbus:dsoftbus",]
   include_dirs = [
     "//foundation/communication/dsoftbus/interfaces/kits/discovery",

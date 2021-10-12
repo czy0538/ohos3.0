@@ -1,85 +1,49 @@
 #include "discovery_service.h"
 #include "session.h"
 #include "softbus_common.h"
+#include "nstackx.h"
+
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define NAME_LENGTH 64
 #define TRANS_FAILED -1
 
-void onSuccess(int publishId);
-void onFail(int publishId, PublishFailReason reason);
-int StartSessionServer(void);
-void onBytesReceivedFunc(int sessionId, const void *data, unsigned int dataLen);
-void onSessionClosedFunc(int sessionId);
-int onSessionOpenedFunc(int sessionId,int result);
+// 定义业务⾃身的业务名称，会话名称及相关回调
+const char *g_pkgName = "czyPkgName";
+const char *g_sessionName = "czySessionName";
+const char *g_demoModuleName = "czyModuleName";
 
-// 定义相关名称
-const char *g_pkgName = "czy";
-const char *g_sessionName = "czy";
-const char *moduleName = "czy";
+static PublishInfo g_publishInfo = {
+    .capabilityData = (unsigned char *)"1",
+    .capability = "dvKit",
+    .dataLen = sizeof("1"),
+    .publishId = 123,
+    .mode = DISCOVER_MODE_ACTIVE,
+    .medium = COAP,
+    .freq = MID,
+};
 
-//定义参数
-static PublishInfo info =
-    {
-        .publishId = 1,
-        .mode = DISCOVER_MODE_ACTIVE,
-        .medium = COAP,
-        .freq = HIGH,
-        .capability = "ddmpCapability",
-        .capabilityData = (unsigned char *)"123",
-        .dataLen = 1};
-
-static IPublishCallback cb =
-    {
-        .OnPublishSuccess = onSuccess,
-        .OnPublishFail = onFail};
-
-static ISessionListener ISLcb =
-    {
-        .OnBytesReceived = onBytesReceivedFunc,
-        .OnSessionOpened = onSessionOpenedFunc,
-        .OnSessionClosed = onSessionClosedFunc};
-void onSuccess(int publishId)
+// 回调实现：接收对方通过SendBytes发送的数据，此示例实现是接收到对端发送的数据后回复固定消息
+void OnBytesReceivedTest(int sessionId, const void *data, unsigned int dataLen)
 {
-    printf("publish succeeded, publishId = %d\r\n", publishId);
-}
-
-void onFail(int publishId, PublishFailReason reason)
-{
-    printf("publish failed, publishId = %d, reason = %d\r\n", publishId, reason);
-}
-
-// 向SoftBus注册业务会话服务及其回调
-int StartSessionServer()
-{
-    int ret = CreateSessionServer(g_pkgName, g_sessionName, &ISLcb);
-    if (ret < 0)
-    {
-        printf("Failed to create session server!\n");
-    }
-    return ret;
-}
-
-// 接收对方通过SendBytes发送的数据
-void onBytesReceivedFunc(int sessionId, const void *data, unsigned int dataLen)
-{
-    printf("onBytesReceived\n");
+    printf("OnBytesReceivedTest\n");
     printf("Recv Data: %s\n", (char *)data);
     printf("Recv Data dataLen: %d\n", dataLen);
-    char *testSendData = "Hello World!";
+    char *testSendData = "Hello World, Hello!";
     SendBytes(sessionId, testSendData, strlen(testSendData));
     return;
 }
 
-//会话关闭后的相关业务操作
-void onSessionClosedFunc(int sessionId)
+// 回调实现：用于处理会话关闭后的相关业务操作，如释放当前会话相关的业务资源，会话无需业务主动释放
+void OnSessionClosedEventTest(int sessionId)
 {
     printf("Close session successfully, sessionId=%d\n", sessionId);
 }
 
-//会话打开后的相关业务操作
-int onSessionOpenedFunc(int sessionId,int result)
+// 回调实现：用于处理会话打开后的相关业务操作。返回值为0，表示接收；反之，非0表示拒绝。此示例表示只接受其他设备的同名会话连接
+int OnSessionOpenedEventTest(int sessionId)
 {
     char sessionNameBuffer[NAME_LENGTH + 1];
     if (GetPeerSessionName(sessionId, sessionNameBuffer, NAME_LENGTH) == TRANS_FAILED)
@@ -96,11 +60,54 @@ int onSessionOpenedFunc(int sessionId,int result)
     return 0;
 }
 
+ISessionListener s_sessionCallback =
+{
+        .OnBytesReceived = OnBytesReceivedTest,
+        .OnSessionOpened = OnSessionOpenedEventTest,
+        .OnSessionClosed = OnSessionClosedEventTest};
+// 向SoftBus注册业务会话服务及其回调
+int StartSessionServer()
+{
+    int ret = CreateSessionServer(g_pkgName, g_sessionName, &s_sessionCallback);
+    if (ret < 0)
+    {
+        printf("Failed to create session server!\n");
+    }
+    return ret;
+}
+
+// 从SoftBus中删除业务会话服务及其回调
+void StopSessionServer()
+{
+    int ret = RemoveSessionServer(g_pkgName, g_sessionName);
+    if (ret < 0)
+    {
+        printf("Failed to remove session server!\n");
+        return;
+    }
+}
+
+// 回调函数声明：
+void onSuccess(int publishId)
+{
+    printf("publish succeeded, publishId = %d\r\n", publishId);
+    if (StartSessionServer() != -1)
+        printf("-----StartSessionServer successed!-----\n");
+}
+void onFail(int publishId, PublishFailReason reason)
+{
+    printf("publish failed, publishId = %d, reason = %d\r\n", publishId, reason);
+}
+
+
+static IPublishCallback g_publishCallback = {
+    .OnPublishSuccess = onSuccess,
+    .OnPublishFail = onFail,
+};
 int main()
 {
-    //初始化软总线
-    printf("enter SoftBus Task\r\n");
-    int ret = PublishService(moduleName, &info, &cb);
+    printf("----------enter publish service--------\n");
+    int ret = PublishService(g_demoModuleName, &g_publishInfo, &g_publishCallback);
     if (ret != 0)
     {
         printf("PublishService init failed\n");
@@ -109,7 +116,5 @@ int main()
     {
         printf("PublishService init success\n");
     }
-    //启动传输服务
-    if (StartSessionServer() != -1)
-        printf("StartSessionServer successed!\n");
+    return 0;
 }

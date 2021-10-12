@@ -5,9 +5,9 @@
 #include <string.h>
 
 // 定义相关名称
-const char *g_pkgName = "czy";
-const char *g_sessionName = "czy";
-const char *moduleName = "czy";
+const char *g_pkgName = "czypkgName";
+const char *g_sessionName = "czysessionName";
+const char *moduleName = "czymoduleName";
 
 static SubscribeInfo g_sInfo = {
     .subscribeId = 1,
@@ -15,8 +15,8 @@ static SubscribeInfo g_sInfo = {
     .mode = DISCOVER_MODE_ACTIVE,
     .freq = MID,
     .capability = "dvKit",
-    .capabilityData = (unsigned char *)"capdata",
-    .dataLen = sizeof("capdata"),
+    .capabilityData = (unsigned char *)"cap",
+    .dataLen = sizeof("cap"),
     .isSameAccount = true,
     .isWakeRemote = false};
 

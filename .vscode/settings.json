@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "ohos_init.h": "c",
-        "wifi_connecter.h": "c"
+        "wifi_connecter.h": "c",
+        "discovery_service.h": "c"
     }
 }

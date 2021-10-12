@@ -124,7 +124,9 @@
         "subsystem": "applications",
         "components": [
           { "component": "camera_sample_app", "features":[] },
-          { "component": "camera_screensaver_app", "features":[] }
+          { "component": "camera_screensaver_app", "features":[] },
+          { "component": "softbus_publish_app", "features":[] },
+          { "component": "softbus_discovery_app", "features":[] }
         ]
       },
       {
@@ -146,7 +148,7 @@
         "components": [
           { "component": "devicemanager_lite", "features":[] }
         ]
-      }	  
+      }
     ],
     "third_party_dir": "//third_party",
     "product_adapter_dir": "//vendor/hisilicon/hispark_taurus_linux/hals"

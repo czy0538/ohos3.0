@@ -18,7 +18,8 @@
           { "component": "camera_sample_communication", "features":[] },
           { "component": "camera_sample_app", "features":[] },
           { "component": "camera_sample_ai", "features":[] },
-          { "component": "camera_screensaver_app", "features":[] }
+          { "component": "camera_screensaver_app", "features":[] },
+           { "component": "softbus_publish_app", "features":[] }
         ]
       },
       {
