@@ -89,3 +89,5 @@ out/
 prebuilts/
 applications/sample/camera/prebuilts/
 .ccache/
+ccache.log
+ccache.log.old
