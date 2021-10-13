@@ -901,7 +901,7 @@ int CreateTcpSessionMgr(bool asServer, const char* localIp)
     // }
 
     int ret = InitGSessionMgr();
-    
+
     // if (ReleaseTcpMgrLock() != 0 || ret != 0) {
     //     FreeSessionMgr();
     //     return TRANS_FAILED;
@@ -961,16 +961,16 @@ int CreateSessionServer(const char* moduleName, const char* sessionName, struct 
     if (SoftBusCheckPermission(SOFTBUS_PERMISSION_NAME) != 0) {
         return TRANS_FAILED;
     }
-
-    if (GetTcpMgrLock() != 0) {
-        return TRANS_FAILED;
-    }
+    
+    // if (GetTcpMgrLock() != 0) {
+    //     return TRANS_FAILED;
+    // }
 
     int ret = CreateSessionServerInner(moduleName, sessionName, listener);
 
-    if (ReleaseTcpMgrLock() != 0) {
-        return TRANS_FAILED;
-    }
+    // if (ReleaseTcpMgrLock() != 0) {
+    //     return TRANS_FAILED;
+    // }
     return ret;
 }
 int RemoveSessionServer(const char* moduleName, const char *sessionName)

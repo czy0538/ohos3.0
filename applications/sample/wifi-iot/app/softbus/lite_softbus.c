@@ -1,6 +1,5 @@
 #include "ohos_init.h"
 #include "cmsis_os2.h"
-//#include "wifi_connecter.h"
 #include "wifi_device.h"
 
 #include "discovery_service.h"
@@ -32,8 +31,8 @@ const char *moduleName = "czymoduleName";
 //定义参数
 static PublishInfo info =
     {
-        .publishId = 1,
-        .mode = DISCOVER_MODE_ACTIVE,
+        .publishId = 233,
+        .mode = DISCOVER_MODE_PASSIVE,
         .medium = COAP,
         .freq = HIGH,
         .capability = "dvKit",
@@ -121,12 +120,12 @@ void liteSoftBusTask(void)
     {
         printf("PublishService init success\n");
     }
-    // //启动传输服务
-    // char ipbuff[NSTACKX_MAX_IP_STRING_LEN] = {"0.0.0.0"};
-    // CoapGetIp(ipbuff, NSTACKX_MAX_IP_STRING_LEN, 0);
-    // printf("CoapGetIp = %s\n", ipbuff);
-    // if (StartSessionServer() != -1)
-    //     printf("StartSessionServer successed!\n");
+    //启动传输服务
+    char ipbuff[NSTACKX_MAX_IP_STRING_LEN] = {"0.0.0.0"};
+    CoapGetIp(ipbuff, NSTACKX_MAX_IP_STRING_LEN, 0);
+    printf("CoapGetIp = %s\n", ipbuff);
+    if (StartSessionServer() != -1)
+        printf("StartSessionServer successed!\n");
 }
 
 SYS_SERVICE_INIT_PRI(liteSoftBusTask, 4);
