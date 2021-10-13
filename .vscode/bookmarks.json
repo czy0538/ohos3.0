@@ -1,0 +1,14 @@
+{
+	"files": [
+		{
+			"path": "foundation/communication/softbus_lite/trans_service/source/libdistbus/tcp_session_manager.c",
+			"bookmarks": [
+				{
+					"line": 898,
+					"column": 1,
+					"label": "设备锁问题定位"
+				}
+			]
+		}
+	]
+}

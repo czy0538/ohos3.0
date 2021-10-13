@@ -390,7 +390,7 @@ static cJSON *TransFirstPkg2Json(const char *buffer, int bufferSize)
         SOFTBUS_PRINT("[TRANS] bufferSize < AUTH_PACKET_HEAD_SIZE\n");
         return NULL;
     }
-    
+
     int offset = AUTH_PACKET_HEAD_SIZE - sizeof(int);
     int dataLen = GetIntFromBuf(buffer, offset) - SESSION_KEY_INDEX_SIZE;
     if (dataLen <= 0 || dataLen > (RECIVED_BUFF_SIZE - AUTH_PACKET_HEAD_SIZE)) {
@@ -895,15 +895,17 @@ int CreateTcpSessionMgr(bool asServer, const char* localIp)
         return TRANS_FAILED;
     }
 
-    if (InitTcpMgrLock() != 0 || GetTcpMgrLock() != 0) {
-        return TRANS_FAILED;
-    }
+//去掉设备锁相关代码
+    // if (InitTcpMgrLock() != 0 || GetTcpMgrLock() != 0) {
+    //     return TRANS_FAILED;
+    // }
 
     int ret = InitGSessionMgr();
-    if (ReleaseTcpMgrLock() != 0 || ret != 0) {
-        FreeSessionMgr();
-        return TRANS_FAILED;
-    }
+    
+    // if (ReleaseTcpMgrLock() != 0 || ret != 0) {
+    //     FreeSessionMgr();
+    //     return TRANS_FAILED;
+    // }
     g_sessionMgr->asServer = asServer;
     int listenFd = OpenTcpServer(localIp, DEFAULT_TRANS_PORT);
     if (listenFd < 0) {
