@@ -10,15 +10,15 @@ const char *g_sessionName = "czysessionName";
 const char *moduleName = "czymoduleName";
 
 static SubscribeInfo g_sInfo = {
-    .subscribeId = 1,
+    .subscribeId = 233,
     .medium = COAP,
     .mode = DISCOVER_MODE_ACTIVE,
-    .freq = MID,
+    .freq = HIGH,
     .capability = "dvKit",
-    .capabilityData = (unsigned char *)"cap",
-    .dataLen = sizeof("cap"),
-    .isSameAccount = true,
-    .isWakeRemote = false};
+    .capabilityData = (unsigned char *)"a",
+    .dataLen = sizeof("a"),
+    .isSameAccount = false,
+    .isWakeRemote = true};
 
 static void TestDeviceFound(const DeviceInfo *device)
 {
