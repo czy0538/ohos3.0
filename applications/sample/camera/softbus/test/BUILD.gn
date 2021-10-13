@@ -1,0 +1,19 @@
+import("//build/lite/config/component/lite_component.gni")
+lite_component("softbus_test") {
+  features = [ ":softbusTest" ]
+}
+executable("softbusTest") {
+  output_name = "softbusTest"
+  sources = [ "test.c" ]
+  deps=["//foundation/communication/dsoftbus:dsoftbus",]
+  include_dirs = [
+    "//foundation/communication/dsoftbus/interfaces/kits/discovery",
+    "//foundation/communication/dsoftbus/interfaces/kits/transport",
+    "//foundation/communication/dsoftbus/interfaces/kits/common",
+    "//foundation/communication/dsoftbus/interfaces/kits/bus_center",
+    "//foundation/communication/dsoftbus/components/nstackx/nstackx_ctrl/interface"
+  ]
+  defines = []
+  cflags_c = []
+  ldflags = []
+}
