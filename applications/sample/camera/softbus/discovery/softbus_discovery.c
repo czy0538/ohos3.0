@@ -12,7 +12,7 @@ const char *moduleName = "czymoduleName";
 static SubscribeInfo g_sInfo = {
     .subscribeId = 233,
     .medium = COAP,
-    .mode = DISCOVER_MODE_ACTIVE,
+    .mode = DISCOVER_MODE_PASSIVE,
     .freq = HIGH,
     .capability = "dvKit",
     .capabilityData = (unsigned char *)"a",
@@ -22,17 +22,17 @@ static SubscribeInfo g_sInfo = {
 
 static void TestDeviceFound(const DeviceInfo *device)
 {
-    printf("[client]TestDeviceFound\n");
+    printf("[czy_test]TestDeviceFound\n");
 }
 
 static void TestDiscoverFailed(int subscribeId, DiscoveryFailReason failReason)
 {
-    printf("[client]TestDiscoverFailed\n");
+    printf("[czy_test]TestDiscoverFailed\n");
 }
 
 static void TestDiscoverySuccess(int subscribeId)
 {
-    printf("[client]TestDiscoverySuccess\n");
+    printf("[czy_test]TestDiscoverySuccess\n");
 }
 
 static IDiscoveryCallback g_subscribeCb = {
@@ -44,6 +44,11 @@ int main()
 {
     printf("start discoveryTask\n");
     int ret = StartDiscovery(g_pkgName, &g_sInfo, &g_subscribeCb);
-    printf("ret is:%d",ret);
+    printf("[czy_test]ret is:%d\n",ret);
+    while(ret!=233)
+    {
+        printf("[czy_test]waiting!!!\n");
+        scanf("%d", &ret);
+    }
     return 0;
 }
