@@ -14,6 +14,16 @@
 					"label": "去掉设备锁"
 				}
 			]
+		},
+		{
+			"path": "foundation/communication/dsoftbus/components/nstackx/nstackx_util/platform/liteos/sys_dev.c",
+			"bookmarks": [
+				{
+					"line": 79,
+					"column": 8,
+					"label": "ioctl问题"
+				}
+			]
 		}
 	]
 }

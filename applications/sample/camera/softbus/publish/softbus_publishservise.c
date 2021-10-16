@@ -16,13 +16,13 @@ const char *g_sessionName = "czySessionName";
 const char *g_demoModuleName = "czyModuleName";
 
 static PublishInfo g_publishInfo = {
-    .capabilityData = (unsigned char *)"1",
+    .capabilityData = (unsigned char *)"a",
     .capability = "dvKit",
-    .dataLen = sizeof("1"),
-    .publishId = 123,
+    .dataLen = sizeof("a"),
+    .publishId = 233,
     .mode = DISCOVER_MODE_ACTIVE,
     .medium = COAP,
-    .freq = MID,
+    .freq = HIGH,
 };
 
 // 回调实现：接收对方通过SendBytes发送的数据，此示例实现是接收到对端发送的数据后回复固定消息
@@ -106,15 +106,20 @@ static IPublishCallback g_publishCallback = {
 };
 int main()
 {
-    printf("----------enter publish service--------\n");
+    printf("[czy_test]----------enter publish service--------\n");
     int ret = PublishService(g_demoModuleName, &g_publishInfo, &g_publishCallback);
     if (ret != 0)
     {
-        printf("PublishService init failed\n");
+        printf("[czy_test]PublishService init failed\n");
     }
     else
     {
-        printf("PublishService init success\n");
+        printf("[czy_test]PublishService init success\n");
+    }
+    while(ret!=233)
+    {
+        printf("[czy_test]waiting!!!\n");
+        scanf("%d", &ret);
     }
     return 0;
 }
