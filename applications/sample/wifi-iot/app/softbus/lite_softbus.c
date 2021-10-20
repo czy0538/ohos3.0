@@ -52,6 +52,7 @@ struct ISessionListener ISLcb =
 void onSuccess(int publishId)
 {
     printf("publish succeeded, publishId = %d\r\n", publishId);
+
 }
 
 void onFail(int publishId, PublishFailReason reason)
@@ -105,7 +106,7 @@ int onSessionOpenedFunc(int sessionId)
     return 0;
 }
 
-void liteSoftBusTask(void)
+void liteSoftBusTask()
 {
     WifiConnectTask();
 
@@ -126,6 +127,11 @@ void liteSoftBusTask(void)
     printf("CoapGetIp = %s\n", ipbuff);
     if (StartSessionServer() != -1)
         printf("StartSessionServer successed!\n");
+
+    sleep(60);
+    printf("try to  UnPublishService= %d\r\n", 233);
+    UnPublishService(moduleName,233);
+    printf("UnPublishService successed~\n");
 }
 
 SYS_SERVICE_INIT_PRI(liteSoftBusTask, 4);

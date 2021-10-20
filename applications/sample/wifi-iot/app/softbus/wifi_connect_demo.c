@@ -34,7 +34,7 @@
 
 #include "wifi_connecter.h"
 
-void WifiConnectTask()
+void WifiConnectTask(void)
 {
     printf("enter wifi task\n");
     WifiDeviceConfig apConfig = {0};

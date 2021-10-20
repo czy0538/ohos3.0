@@ -55,6 +55,20 @@ static int32_t GetInterfaceInfo(int32_t fd, int32_t option, struct ifreq *interf
     }
 
     /* get IP of this interface */
+    //我的魔改 begin
+    if (option == SIOCGIFADDR)
+    {
+        printf("[CZY-TEST]:SIOCGIFADDR\r\n");
+    }
+    else if (option == SIOCGIFNETMASK)
+    {
+        printf("[CZY-TEST]:SIOCGIFNETMASK\r\n");
+    }
+    else
+    {
+        printf("[CZY-TEST]按int型输出该值:%d\r\n", option);
+    }
+    //我的魔改end
     if (lwip_ioctl(fd, option, (char*)interface) < 0) {
         LOGE(TAG, "lwip_ioctl fail, errno = %d", errno);
         return NSTACKX_EFAILED;

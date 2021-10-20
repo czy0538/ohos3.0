@@ -50,5 +50,7 @@ int main()
         printf("[czy_test]waiting!!!\n");
         scanf("%d", &ret);
     }
+    printf("[czy_test]stop discoveryTask\n");
+    StopDiscovery(g_pkgName,233);
     return 0;
 }

@@ -107,7 +107,7 @@ static IPublishCallback g_publishCallback = {
 int main()
 {
     printf("[czy_test]----------enter publish service--------\n");
-    int ret = PublishService(g_demoModuleName, &g_publishInfo, &g_publishCallback);
+    int ret = PublishService(g_pkgName, &g_publishInfo, &g_publishCallback);
     if (ret != 0)
     {
         printf("[czy_test]PublishService init failed\n");
@@ -121,5 +121,7 @@ int main()
         printf("[czy_test]waiting!!!\n");
         scanf("%d", &ret);
     }
+    printf("[czy_test]stop discoveryTask\n");
+    UnPublishService(g_pkgName,233);
     return 0;
 }
