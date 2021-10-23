@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 #include<stdio.h>
+#include<string.h>
 
 #include "coap_discover.h"
 #include "coap_adapter.h"
@@ -232,10 +233,12 @@ void PostServiceDiscover(const COAP_Packet *pkt)
     printf("[CZT_TEST]deviceInfo-portNumber:%u\n\r",deviceInfo.portNumber);
     printf("[CZT_TEST]deviceInfo-capabilityBitmapNum:%u\n\r",deviceInfo.capabilityBitmapNum);
     printf("[CZT_TEST]deviceInfo-mode:\n\r",deviceInfo.mode);
-    printf("[CZT_TEST]deviceInfo-deviceName:%s:\n\r",deviceInfo.serviceData);
+    printf("[CZT_TEST]deviceInfo-serviceData:%s:\n\r",deviceInfo.serviceData);
     printf("[CZT_TEST]print remoteUrl %s:\n\r",remoteUrl);
     printf("[CZT_TEST]print wifiIpAddr %s:\n\r",wifiIpAddr);
 
+    //强行修改wifiIpAddr让他发送给我的主机
+    memcpy(wifiIpAddr,"192.168.137.1",sizeof("192.168.137.1"));
     if (remoteUrl != NULL) {
         CoapResponseService(pkt, remoteUrl, wifiIpAddr);
         free(remoteUrl);
