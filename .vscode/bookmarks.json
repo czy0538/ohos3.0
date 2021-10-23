@@ -54,6 +54,16 @@
 					"label": "[3861]1.coap侦听线程"
 				}
 			]
+		},
+		{
+			"path": "foundation/communication/softbus_lite/trans_service/source/libdistbus/auth_conn_manager.c",
+			"bookmarks": [
+				{
+					"line": 84,
+					"column": 0,
+					"label": "[3861] ProcessAuthData"
+				}
+			]
 		}
 	]
 }

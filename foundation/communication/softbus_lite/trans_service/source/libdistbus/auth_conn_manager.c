@@ -82,34 +82,42 @@ static int InitListenFd(const char *ip, int port)
     return DBE_SUCCESS;
 }
 
-static bool ProcessAuthData(int listenFd, const fd_set *readSet)
-{
-    if (readSet == NULL || g_callback == NULL || g_callback->onConnectEvent == NULL ||
-        g_callback->onDataEvent == NULL) {
-        return false;
-    }
-
-    if (FD_ISSET(listenFd, readSet)) {
-        struct sockaddr_in addrClient = {0};
-        socklen_t addrLen = sizeof(addrClient);
-
-        g_dataFd = accept(listenFd, (struct sockaddr *)(&addrClient), &addrLen);
-        if (g_dataFd < 0) {
-            CloseAuthSessionFd(listenFd);
+    static bool ProcessAuthData(int listenFd, const fd_set *readSet)
+    {
+        SOFTBUS_PRINT("[CZT_TEST] enter ProcessAuthData\n");
+        if (readSet == NULL || g_callback == NULL || g_callback->onConnectEvent == NULL ||
+            g_callback->onDataEvent == NULL) {
             return false;
         }
-        RefreshMaxFd(g_dataFd);
-        if (g_callback->onConnectEvent(g_dataFd, inet_ntoa(addrClient.sin_addr)) != 0) {
-            CloseAuthSessionFd(g_dataFd);
+        //判断是否是listenFd上存在消息
+        if (FD_ISSET(listenFd, readSet))
+        {
+            SOFTBUS_PRINT("[CZT_TEST] New connections exist,listenFd is set\n");
+            struct sockaddr_in addrClient = {0};
+            socklen_t addrLen = sizeof(addrClient);
+            //如果是，则说明当前存在新的连接，这时调用accept()完成链接创建，新创建的socket的fd被存储在g_dataFd中
+            g_dataFd = accept(listenFd, (struct sockaddr *)(&addrClient), &addrLen);
+            if (g_dataFd < 0) {
+                CloseAuthSessionFd(listenFd);
+                return false;
+            }
+            //刷新g_maxFd，以保证在WaitProcess()中的下一次select()操作时中，会监听到g_dataFd上的事件。
+            RefreshMaxFd(g_dataFd);
+            //调用onConnectEvent通知认证模块有新的连接事件发生，并将新创建的fd和client的IP地址告知认证模块
+            if (g_callback->onConnectEvent(g_dataFd, inet_ntoa(addrClient.sin_addr)) != 0) {
+                CloseAuthSessionFd(g_dataFd);
+            }
         }
-    }
 
-    if (g_dataFd > 0 && FD_ISSET(g_dataFd, readSet)) {
-        g_callback->onDataEvent(g_dataFd);
-    }
+        //如果FD_ISSET()判断出g_dataFd上存在消息，则说明已完成握手的连接向本节点发送了数据，
+        if (g_dataFd > 0 && FD_ISSET(g_dataFd, readSet))
+        {
+            SOFTBUS_PRINT("[CZT_TEST] g_dataFd is set\n");
+            g_callback->onDataEvent(g_dataFd);
+        }
 
-    return true;
-}
+        return true;
+    }
 
 
 static void WaitProcess(void)
