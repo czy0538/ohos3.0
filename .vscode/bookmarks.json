@@ -24,6 +24,16 @@
 					"label": "ioctl问题"
 				}
 			]
+		},
+		{
+			"path": "foundation/communication/softbus_lite/discovery/coap/source/coap_discover.c",
+			"bookmarks": [
+				{
+					"line": 265,
+					"column": 4,
+					"label": "[3861]coap侦听线程"
+				}
+			]
 		}
 	]
 }

@@ -268,6 +268,7 @@ static void CoapReadHandle(unsigned int uwParam1, unsigned int uwParam2, unsigne
         FD_SET(serverFd, &readSet);
         ret = select(serverFd + 1, &readSet, NULL, NULL, NULL);
         if (ret > 0) {
+            SOFTBUS_PRINT("[CZY_TEST]:IO requests are listened by CoapReadHandle ,ret is:%d \r\n",ret);
             if (FD_ISSET(serverFd, &readSet)) {
                 HandleReadEvent(serverFd);
             }
