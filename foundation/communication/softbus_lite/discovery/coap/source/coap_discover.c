@@ -12,6 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include<stdio.h>
+
 #include "coap_discover.h"
 #include "coap_adapter.h"
 #include "coap_socket.h"
@@ -223,6 +225,17 @@ void PostServiceDiscover(const COAP_Packet *pkt)
     (void)memset_s(wifiIpAddr, sizeof(wifiIpAddr), 0, sizeof(wifiIpAddr));
     (void)inet_ntop(AF_INET, &deviceInfo.netChannelInfo.wifiApInfo.ip, wifiIpAddr, sizeof(wifiIpAddr));
 
+    printf("[CZT_TEST]print deviceInfo:\n");
+    printf("[CZT_TEST]deviceInfo-deviceName:%s:\n\r",deviceInfo.deviceName);
+    printf("[CZT_TEST]deviceInfo-deviceId:%s\n\r",deviceInfo.deviceId);
+    printf("[CZT_TEST]deviceInfo-deviceType:%d\n\r",deviceInfo.deviceType);
+    printf("[CZT_TEST]deviceInfo-portNumber:%u\n\r",deviceInfo.portNumber);
+    printf("[CZT_TEST]deviceInfo-capabilityBitmapNum:%u\n\r",deviceInfo.capabilityBitmapNum);
+    printf("[CZT_TEST]deviceInfo-mode:\n\r",deviceInfo.mode);
+    printf("[CZT_TEST]deviceInfo-deviceName:%s:\n\r",deviceInfo.serviceData);
+    printf("[CZT_TEST]print remoteUrl %s:\n\r",remoteUrl);
+    printf("[CZT_TEST]print wifiIpAddr %s:\n\r",wifiIpAddr);
+
     if (remoteUrl != NULL) {
         CoapResponseService(pkt, remoteUrl, wifiIpAddr);
         free(remoteUrl);
@@ -248,7 +261,16 @@ static void HandleReadEvent(int fd)
     COAP_Packet decodePacket;
     (void)memset_s(&decodePacket, sizeof(COAP_Packet), 0, sizeof(COAP_Packet));
     decodePacket.protocol = COAP_UDP;
-    COAP_SoftBusDecode(&decodePacket, recvBuffer, nRead);
+    int ret;
+    ret = COAP_SoftBusDecode(&decodePacket, recvBuffer, nRead);
+    if(ret==0)
+    {
+        SOFTBUS_PRINT("[CZT_TEST] COAP_SoftBusDecode ret is:%d,success\n",ret);
+    }
+    else
+    {
+        SOFTBUS_PRINT("[CZT_TEST] COAP_SoftBusDecode ret is:%d,fail\n",ret);
+    }
     PostServiceDiscover(&decodePacket);
     free(recvBuffer);
 }

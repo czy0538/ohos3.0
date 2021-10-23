@@ -39,12 +39,17 @@
 			"path": "foundation/communication/softbus_lite/discovery/coap/source/coap_discover.c",
 			"bookmarks": [
 				{
-					"line": 231,
+					"line": 209,
+					"column": 0,
+					"label": "[3861] 3. DeviceInfo的填入"
+				},
+				{
+					"line": 244,
 					"column": 0,
 					"label": "[3861]2.收到socket I/O后的处理函数"
 				},
 				{
-					"line": 266,
+					"line": 288,
 					"column": 4,
 					"label": "[3861]1.coap侦听线程"
 				}

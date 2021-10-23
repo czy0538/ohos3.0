@@ -145,6 +145,6 @@ int CoapSocketRecv(int socketFd, uint8_t *buffer, size_t length)
     socklen_t len = sizeof(struct sockaddr_in);
     (void)memset_s(&addr, sizeof(addr), 0, sizeof(addr));
     int ret = recvfrom(socketFd, buffer, length, 0, (struct sockaddr *)&addr, &len);
-    printf("[CZY_TEST]：printf addr info:port:%u,addr:%s\n",addr.sin_port, inet_ntoa(addr.sin_addr));
+    printf("[CZY_TEST]:printf addr info:port:%u,addr:%s\n",addr.sin_port, inet_ntoa(addr.sin_addr));
     return ret;
 }
