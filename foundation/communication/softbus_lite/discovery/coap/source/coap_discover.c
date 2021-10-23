@@ -238,7 +238,7 @@ void PostServiceDiscover(const COAP_Packet *pkt)
     printf("[CZT_TEST]print wifiIpAddr %s:\n\r",wifiIpAddr);
 
     //强行修改wifiIpAddr让他发送给我的主机
-    memcpy(wifiIpAddr,"192.168.137.1",sizeof("192.168.137.1"));
+    //memcpy(wifiIpAddr,"192.168.137.1",sizeof("192.168.137.1"));
     if (remoteUrl != NULL) {
         CoapResponseService(pkt, remoteUrl, wifiIpAddr);
         free(remoteUrl);
