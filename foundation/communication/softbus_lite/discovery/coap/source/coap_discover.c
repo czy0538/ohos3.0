@@ -238,6 +238,7 @@ static void HandleReadEvent(int fd)
     }
     ssize_t nRead;
     nRead = CoapSocketRecv(socketFd, recvBuffer, COAP_MAX_PDU_SIZE);
+    SOFTBUS_PRINT("[CZT_TEST] HandleReadEvent nRead is:%d\n",nRead);
     if ((nRead == 0) || (nRead < 0 && errno != EAGAIN &&
         errno != EWOULDBLOCK && errno != EINTR)) {
         free(recvBuffer);

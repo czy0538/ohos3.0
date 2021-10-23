@@ -128,10 +128,10 @@ void liteSoftBusTask()
     if (StartSessionServer() != -1)
         printf("StartSessionServer successed!\n");
 
-    sleep(60);
-    printf("try to  UnPublishService= %d\r\n", 233);
-    UnPublishService(moduleName,233);
-    printf("UnPublishService successed~\n");
+    // sleep(60);
+    // printf("try to  UnPublishService= %d\r\n", 233);
+    // UnPublishService(moduleName,233);
+    // printf("UnPublishService successed~\n");
 }
 
 SYS_SERVICE_INIT_PRI(liteSoftBusTask, 4);
