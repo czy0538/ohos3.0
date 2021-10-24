@@ -337,8 +337,12 @@ int32_t GetIfBroadcastIp(const char *ifName, char *ipString, size_t ipStringLen)
 
     int32_t ifreqLen = (int32_t)sizeof(struct ifreq);
     int32_t interfaceNum = (int32_t)(ifc.ifc_len / ifreqLen);
+    printf("[CZY_TEST_GetIfBroadcastIp]interfaceNum==%d\n",interfaceNum);
+    printf("[CZY_TEST_GetIfBroadcastIp]print all interfaceInfo\n");
+    //一个比较ip的函数
     for (int32_t i = 0; i < interfaceNum && i < INTERFACE_MAX; i++)
     {
+        printf("[CZY_TEST_GetIfBroadcastIp]ifr_name==%s\n",buf[i].ifr_name);
         if (strlen(buf[i].ifr_name) < strlen(ifName))
         {
             continue;
@@ -347,6 +351,7 @@ int32_t GetIfBroadcastIp(const char *ifName, char *ipString, size_t ipStringLen)
         {
             continue;
         }
+        printf("[CZY_TEST_GetIfBroadcastIp] enter GetInterfaceInfo\n");
         if (GetInterfaceInfo(fd, SIOCGIFBRDADDR, &buf[i]) != NSTACKX_EOK)
         {
             continue;
@@ -355,13 +360,14 @@ int32_t GetIfBroadcastIp(const char *ifName, char *ipString, size_t ipStringLen)
         {
             continue;
         }
-
+        printf("[CZY_TEST_GetIfBroadcastIp] exit GetInterfaceInfo\n");
         if (inet_ntop(AF_INET, &(((struct sockaddr_in *)&(buf[i].ifr_addr))->sin_addr), ipString,
                       (socklen_t)ipStringLen) == NULL)
         {
             continue;
         }
         foundIp = NSTACKX_TRUE;
+        printf("[CZY_TEST_GetIfBroadcastIp] ipString:%s\n",ipString);
         break;
     }
     CloseSocketInner(fd);
