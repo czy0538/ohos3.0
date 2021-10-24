@@ -601,7 +601,8 @@ static int32_t CoapPostServiceDiscover(void)
         printf("[CZY_TEST_CoapPostServiceDiscover] GetLocalInterfaceName error\n");
         return NSTACKX_EFAILED;
     }
-
+    printf("[CZY_TEST_CoapPostServiceDiscover] ifName:%s\n",ifName);
+    //3516问题函数入口
     if (GetIfBroadcastIp(ifName, ipString, sizeof(ipString)) != NSTACKX_EOK) {
         printf("[CZY_TEST_CoapPostServiceDiscover]GetIfBroadcastIp error\n");
         return NSTACKX_EFAILED;

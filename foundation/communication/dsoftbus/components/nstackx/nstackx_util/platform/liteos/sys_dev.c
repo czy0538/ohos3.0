@@ -106,15 +106,18 @@ static int32_t GetInterfaceNetMask(int32_t fd, struct ifreq *interface)
 
 int32_t GetInterfaceList(struct ifconf *ifc, struct ifreq *buf, uint32_t size)
 {
+    printf("[CZY_TEST_GetInterfaceList] enter\n ");
     int32_t fd = socket(AF_INET, SOCK_DGRAM, 0);
     if (fd < 0)
     {
+        printf("[CZY_TEST_GetInterfaceList] fd < 0\n ");
         return NSTACKX_EFAILED;
     }
     ifc->ifc_len = (int32_t)size;
     ifc->ifc_buf = (char *)buf;
     if (ioctl(fd, SIOCGIFCONF, (char *)ifc) < 0)
     {
+        printf("[CZY_TEST_GetInterfaceList] ioctl(fd, SIOCGIFCONF, (char *)ifc) < 0\n ");
         LOGE(TAG, "ioctl fail, errno = %d", errno);
         CloseSocketInner(fd);
         return NSTACKX_EFAILED;
@@ -314,18 +317,21 @@ L_ERROR:
 
 int32_t GetIfBroadcastIp(const char *ifName, char *ipString, size_t ipStringLen)
 {
+    printf("[CZY_TEST_GetIfBroadcastIp] enter\n ");
     struct ifreq buf[INTERFACE_MAX];
     struct ifconf ifc;
     uint8_t foundIp = NSTACKX_FALSE;
 
     if (ifName == NULL)
     {
+        printf("[CZY_TEST_GetIfBroadcastIp] ifName == NULL\n ");
         return NSTACKX_EFAILED;
     }
 
     int32_t fd = GetInterfaceList(&ifc, buf, sizeof(buf));
     if (fd < 0)
     {
+        printf("[CZY_TEST_GetIfBroadcastIp]GetInterfaceList error\n ");
         return NSTACKX_EFAILED;
     }
 
@@ -362,6 +368,7 @@ int32_t GetIfBroadcastIp(const char *ifName, char *ipString, size_t ipStringLen)
 
     if (!foundIp)
     {
+        printf("[CZY_TEST_GetIfBroadcastIp] !foundIp\n ");
         return NSTACKX_EFAILED;
     }
 
