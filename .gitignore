@@ -91,3 +91,5 @@ applications/sample/camera/prebuilts/
 .ccache/
 ccache.log
 ccache.log.old
+device/hisilicon/modules/middleware/source/ffmpeg_adapt/
+third_party/ltp/testcases/open_posix_testsuite/
