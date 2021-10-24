@@ -16,6 +16,7 @@
 #include "coap_discover.h"
 #include <errno.h>
 #include <string.h>
+#include <stdio.h>
 #include <securec.h>
 
 #include "coap.h"
@@ -590,6 +591,7 @@ static void HndPostServiceMsg(coap_context_t *ctx, struct coap_resource_t *resou
 
 static int32_t CoapPostServiceDiscover(void)
 {
+    printf("[CZY_TEST_CoapPostServiceDiscover] enter\n");
     char ifName[NSTACKX_MAX_INTERFACE_NAME_LEN] = {0};
     char ipString[NSTACKX_MAX_IP_STRING_LEN] = {0};
     char discoverUri[COAP_URI_BUFFER_LENGTH] = {0};
@@ -611,6 +613,13 @@ static int32_t CoapPostServiceDiscover(void)
         LOGE(TAG, "failed to prepare coap data");
         return NSTACKX_EFAILED;
     }
+    printf("[CZY_TEST_CoapPostServiceDiscover] print some info might be sent--------------\n");
+    printf("[CZY_TEST_CoapPostServiceDiscover] ifName:%s\n",ifName);
+    printf("[CZY_TEST_CoapPostServiceDiscover] ipString:%s\n",ipString);
+    printf("[CZY_TEST_CoapPostServiceDiscover] discoverUri:%s\n",discoverUri);
+    printf("[CZY_TEST_CoapPostServiceDiscover] data:%s\n",data);
+    printf("[CZY_TEST_CoapPostServiceDiscover] print some info end--------------\n");
+
 
     return CoapSendRequest(COAP_MESSAGE_NON, discoverUri, data, strlen(data) + 1, SERVER_TYPE_WLANORETH);
 }
@@ -696,6 +705,7 @@ void CoapUnsubscribeModuleInner(uint8_t isUnsubscribe)
 
 void CoapServiceDiscoverInner(uint8_t userRequest)
 {
+    printf("[CZY_TEST_CoapServiceDiscoverInner] enter\n");
     uint32_t discoverInterval;
     if (!IsWifiApConnected() || g_context == NULL) {
         return;

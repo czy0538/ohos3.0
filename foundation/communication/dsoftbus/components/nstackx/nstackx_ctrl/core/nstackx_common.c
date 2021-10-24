@@ -16,6 +16,7 @@
 #include "nstackx_common.h"
 
 #include <pthread.h>
+#include <stdio.h>
 #include <securec.h>
 #include <semaphore.h>
 #include <unistd.h>
@@ -276,10 +277,12 @@ void NSTACKX_Deinit(void)
 static void DeviceDiscoverInner(void *argument)
 {
     (void)argument;
+    printf("[CZY_TEST_DeviceDiscoverInner] enter\n");
     CoapServiceDiscoverInner(INNER_DISCOVERY);
 
     /* If both Wifi AP and BLE are disabled, we should also notify user, with empty list. */
     if (!IsWifiApConnected()) {
+        printf("[CZY_TEST_DeviceDiscoverInner] wifi error\n");
         NotifyDeviceFound(NULL, 0);
     }
 }
@@ -298,6 +301,7 @@ static void DeviceDiscoverStopInner(void *argument)
 
 int32_t NSTACKX_StartDeviceFind(void)
 {
+    printf("[CZY_TEST_NSTACKX_StartDeviceFind] enter\n");
     if (g_nstackInitState != NSTACKX_INIT_STATE_DONE) {
         LOGE(TAG, "NSTACKX_Ctrl is not initiated yet");
         return NSTACKX_EFAILED;

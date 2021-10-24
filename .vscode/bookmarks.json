@@ -64,6 +64,31 @@
 					"label": "[3861] ProcessAuthData"
 				}
 			]
+		},
+		{
+			"path": "foundation/communication/dsoftbus/core/discovery/coap/src/disc_coap.c",
+			"bookmarks": [
+				{
+					"line": 289,
+					"column": 0,
+					"label": "[3516] 1 CoapStartAdvertise"
+				}
+			]
+		},
+		{
+			"path": "foundation/communication/dsoftbus/components/nstackx/nstackx_ctrl/core/coap_discover/coap_discover.c",
+			"bookmarks": [
+				{
+					"line": 591,
+					"column": 0,
+					"label": "[3516] 3 发送前的信息准备并调用发送函数"
+				},
+				{
+					"line": 705,
+					"column": 0,
+					"label": "[3516] 2 CoapServiceDiscoverInner "
+				}
+			]
 		}
 	]
 }

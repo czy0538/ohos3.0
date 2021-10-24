@@ -16,10 +16,12 @@
 #include "disc_coap.h"
 
 #include <pthread.h>
+#include <stdio.h>
 #include "disc_nstackx_adapter.h"
 #include "softbus_adapter_mem.h"
 #include "softbus_errcode.h"
 #include "softbus_log.h"
+
 
 #define INT32_MAX_BIT_NUM 32
 #define MAX_CAP_NUM (CAPABILITY_NUM * INT32_MAX_BIT_NUM)
@@ -284,8 +286,10 @@ static int32_t CoapUnsubscribe(const SubscribeOption *option)
     return SOFTBUS_OK;
 }
 
+//StartDiscovery调用的实际函数函数
 static int32_t CoapStartAdvertise(const SubscribeOption *option)
 {
+    printf("[CZY_TEST] enter CoapStartAdvertise\n");
     if (option == NULL || g_subscribeMgr == NULL) {
         return SOFTBUS_INVALID_PARAM;
     }

@@ -16,6 +16,7 @@
 #include "disc_nstackx_adapter.h"
 
 #include <string.h>
+#include <stdio.h>
 #include "bus_center_manager.h"
 #include "nstackx.h"
 #include "securec.h"
@@ -262,17 +263,20 @@ int32_t DiscCoapRegisterServiceData(const unsigned char *serviceData, uint32_t d
 
 int32_t DiscCoapStartDiscovery(DiscCoapMode mode)
 {
+    printf("[CZY_TEST] enter  DiscCoapStartDiscovery\n");
     if (mode < ACTIVE_PUBLISH || mode > ACTIVE_DISCOVERY) {
         SoftBusLog(SOFTBUS_LOG_DISC, SOFTBUS_LOG_ERROR, "invalid param.");
         return SOFTBUS_INVALID_PARAM;
     }
     switch (mode) {
         case ACTIVE_PUBLISH:
+            printf("[CZY_TEST_DiscCoapStartDiscovery] mode is ACTIVE_PUBLISH\n");
             if (NSTACKX_StartDeviceFindAn(PUBLISH_MODE_PROACTIVE) != SOFTBUS_OK) {
                 return SOFTBUS_DISCOVER_COAP_START_PUBLISH_FAIL;
             }
             break;
         case ACTIVE_DISCOVERY:
+            printf("[CZY_TEST_DiscCoapStartDiscovery] mode is ACTIVE_DISCOVERY\n");
             if (NSTACKX_StartDeviceFind() != SOFTBUS_OK) {
                 return SOFTBUS_DISCOVER_COAP_START_DISCOVER_FAIL;
             }
