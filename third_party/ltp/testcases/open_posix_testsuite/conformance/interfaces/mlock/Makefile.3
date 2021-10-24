@@ -1,0 +1,84 @@
+all: $(MAKE_TARGETS)
+	@if [ -d speculative ]; then $(MAKE) -C speculative all; fi
+
+clean:
+	rm -f $(MAKE_TARGETS) logfile* run.sh *.core
+	@if [ -d speculative ]; then $(MAKE) -C speculative clean; fi
+
+install: $(INSTALL_DIR) run.sh
+	set -e; for file in $(INSTALL_TARGETS) run.sh; do	\
+		if [ -f "$$file" ] ; then			\
+			install -m 00755 $$file		\
+				$(INSTALL_DIR)/$$file;	\
+		fi;						\
+	done
+	@if [ -d speculative ]; then $(MAKE) -C speculative install; fi
+
+test: run.sh
+	@./run.sh
+
+$(INSTALL_DIR):
+	mkdir -p $@
+
+run.sh:
+	@echo '#!/bin/sh' > $@
+	@echo "$(top_srcdir)/bin/run-tests.sh $(subdir) $(INSTALL_TARGETS)" >> $@
+	@chmod +x run.sh
+
+mlock_5-1.run-test: $(srcdir)/5-1.c
+	@if $(CC)  $(CFLAGS) $(LDFLAGS) -o $@ $(srcdir)/5-1.c $(LDLIBS) > logfile.$$$$ 2>&1; then \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/5-1 compile PASSED"; \
+		 echo "$(subdir)/5-1 compile PASSED" >> $(LOGFILE); \
+	else \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/5-1 compile FAILED; SKIPPING"; \
+		(echo "$(subdir)/5-1 compile FAILED; SKIPPING"; cat logfile.$$$$) >> $(LOGFILE); \
+	fi; \
+	rm -f logfile.$$$$
+
+mlock_2-1.sh: $(srcdir)/2-1.sh
+	@cp $(srcdir)/2-1.sh $@
+
+mlock_8-1.run-test: $(srcdir)/8-1.c
+	@if $(CC)  $(CFLAGS) $(LDFLAGS) -o $@ $(srcdir)/8-1.c $(LDLIBS) > logfile.$$$$ 2>&1; then \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/8-1 compile PASSED"; \
+		 echo "$(subdir)/8-1 compile PASSED" >> $(LOGFILE); \
+	else \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/8-1 compile FAILED; SKIPPING"; \
+		(echo "$(subdir)/8-1 compile FAILED; SKIPPING"; cat logfile.$$$$) >> $(LOGFILE); \
+	fi; \
+	rm -f logfile.$$$$
+
+mlock_12-1.run-test: $(srcdir)/12-1.c
+	@if $(CC)  $(CFLAGS) $(LDFLAGS) -o $@ $(srcdir)/12-1.c $(LDLIBS) > logfile.$$$$ 2>&1; then \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/12-1 compile PASSED"; \
+		 echo "$(subdir)/12-1 compile PASSED" >> $(LOGFILE); \
+	else \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/12-1 compile FAILED; SKIPPING"; \
+		(echo "$(subdir)/12-1 compile FAILED; SKIPPING"; cat logfile.$$$$) >> $(LOGFILE); \
+	fi; \
+	rm -f logfile.$$$$
+
+mlock_10-1.run-test: $(srcdir)/10-1.c
+	@if $(CC)  $(CFLAGS) $(LDFLAGS) -o $@ $(srcdir)/10-1.c $(LDLIBS) > logfile.$$$$ 2>&1; then \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/10-1 compile PASSED"; \
+		 echo "$(subdir)/10-1 compile PASSED" >> $(LOGFILE); \
+	else \
+		 cat logfile.$$$$; \
+		 echo "$(subdir)/10-1 compile FAILED; SKIPPING"; \
+		(echo "$(subdir)/10-1 compile FAILED; SKIPPING"; cat logfile.$$$$) >> $(LOGFILE); \
+	fi; \
+	rm -f logfile.$$$$
+
+mlock_7-1.sh: $(srcdir)/7-1.sh
+	@cp $(srcdir)/7-1.sh $@
+
+mlock_4-1.sh: $(srcdir)/4-1.sh
+	@cp $(srcdir)/4-1.sh $@
+
