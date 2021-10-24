@@ -598,18 +598,22 @@ static int32_t CoapPostServiceDiscover(void)
     char *data = NULL;
 
     if (GetLocalInterfaceName(ifName, sizeof(ifName)) != NSTACKX_EOK) {
+        printf("[CZY_TEST_CoapPostServiceDiscover] GetLocalInterfaceName error\n");
         return NSTACKX_EFAILED;
     }
 
     if (GetIfBroadcastIp(ifName, ipString, sizeof(ipString)) != NSTACKX_EOK) {
+        printf("[CZY_TEST_CoapPostServiceDiscover]GetIfBroadcastIp error\n");
         return NSTACKX_EFAILED;
     }
 
     if (sprintf_s(discoverUri, sizeof(discoverUri), "coap://%s/%s", ipString, COAP_DEVICE_DISCOVER_URI) < 0) {
+        printf("[CZY_TEST_CoapPostServiceDiscover]discoverUri error\n");
         return NSTACKX_EFAILED;
     }
     data = PrepareServiceDiscover(NSTACKX_TRUE);
     if (data == NULL) {
+        printf("[CZY_TEST_CoapPostServiceDiscover]PrepareServiceDiscover error\n");
         LOGE(TAG, "failed to prepare coap data");
         return NSTACKX_EFAILED;
     }

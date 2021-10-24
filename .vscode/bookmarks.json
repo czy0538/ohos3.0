@@ -84,9 +84,19 @@
 					"label": "[3516] 3 发送前的信息准备并调用发送函数"
 				},
 				{
-					"line": 705,
+					"line": 709,
 					"column": 0,
 					"label": "[3516] 2 CoapServiceDiscoverInner "
+				}
+			]
+		},
+		{
+			"path": "foundation/communication/dsoftbus/components/nstackx/nstackx_ctrl/core/nstackx_device.c",
+			"bookmarks": [
+				{
+					"line": 958,
+					"column": 1,
+					"label": "[3516] GetLocalInterfaceName 问题代码入口"
 				}
 			]
 		}
