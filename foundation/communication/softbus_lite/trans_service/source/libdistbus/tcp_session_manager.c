@@ -696,6 +696,7 @@ static void SelectSessionLoop(TcpSessionMgr *tsm)
 
         errno = 0;
         int ret = select(maxFd + 1, &readfds, NULL, &exceptfds, NULL);
+        SOFTBUS_PRINT("[CZY_TEST] SelectSessionLoop ret is %d\r\n",ret);
         if (ret < 0) {
             SOFTBUS_PRINT("RemoveExceptSessionFd\r\n");
             if (errno == EINTR || RemoveExceptSessionFd(tsm, &exceptfds) == 0) {
@@ -961,7 +962,7 @@ int CreateSessionServer(const char* moduleName, const char* sessionName, struct 
     if (SoftBusCheckPermission(SOFTBUS_PERMISSION_NAME) != 0) {
         return TRANS_FAILED;
     }
-    
+
     // if (GetTcpMgrLock() != 0) {
     //     return TRANS_FAILED;
     // }
