@@ -84,17 +84,17 @@
 			"path": "foundation/communication/dsoftbus/components/nstackx/nstackx_ctrl/core/coap_discover/coap_discover.c",
 			"bookmarks": [
 				{
-					"line": 591,
+					"line": 593,
 					"column": 0,
 					"label": "[3516] 3 发送前的信息准备并调用发送函数"
 				},
 				{
-					"line": 605,
+					"line": 608,
 					"column": 4,
 					"label": "[3516]GetIfBroadcastIp 问题函数入口"
 				},
 				{
-					"line": 710,
+					"line": 713,
 					"column": 0,
 					"label": "[3516] 2 CoapServiceDiscoverInner "
 				}

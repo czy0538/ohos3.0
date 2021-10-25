@@ -191,6 +191,7 @@ static void FillCoapRequest(CoapRequest *coapRequest, uint8_t coapType, const ch
 
 int32_t CoapSendRequest(uint8_t coapType, const char *url, char *data, size_t dataLen, uint8_t serverType)
 {
+    printf("[CZY_TEST_CoapSendRequest] enter\r\n");
     CoapRequest coapRequest;
     coap_session_t *session = NULL;
     coap_address_t dst = {0};
@@ -227,13 +228,14 @@ int32_t CoapSendRequest(uint8_t coapType, const char *url, char *data, size_t da
         LOGE(TAG, "get client session failed");
         goto DATA_FREE;
     }
-
+    printf("[CZY_TEST_CoapSendRequest] CoapGetSessionOnTargetServer success\r\n");
     pdu = CoapPackToPdu(&coapRequest, &coapUri, session);
     if (pdu == NULL) {
         goto SESSION_RELEASE;
     }
-
+    printf("[CZY_TEST_CoapSendRequest] CoapPackToPdu success\r\n");
     tid = coap_send(session, pdu);
+    printf("[CZY_TEST_CoapSendRequest] coap_send success\r\n");
     if (tid == COAP_INVALID_TID) {
         LOGE(TAG, "coap send failed");
         goto SESSION_RELEASE;
@@ -602,11 +604,12 @@ static int32_t CoapPostServiceDiscover(void)
         return NSTACKX_EFAILED;
     }
     printf("[CZY_TEST_CoapPostServiceDiscover] ifName:%s\n",ifName);
-    //3516问题函数入口
-    if (GetIfBroadcastIp(ifName, ipString, sizeof(ipString)) != NSTACKX_EOK) {
-        printf("[CZY_TEST_CoapPostServiceDiscover]GetIfBroadcastIp error\n");
-        return NSTACKX_EFAILED;
-    }
+    //3516问题函数入口,这个函数不就是根据ifName后去IPString，我们直接给他。
+    strcpy(ipString,"192.168.137.255");
+    // if (GetIfBroadcastIp(ifName, ipString, sizeof(ipString)) != NSTACKX_EOK) {
+    //     printf("[CZY_TEST_CoapPostServiceDiscover]GetIfBroadcastIp error\n");
+    //     return NSTACKX_EFAILED;
+    // }
 
     if (sprintf_s(discoverUri, sizeof(discoverUri), "coap://%s/%s", ipString, COAP_DEVICE_DISCOVER_URI) < 0) {
         printf("[CZY_TEST_CoapPostServiceDiscover]discoverUri error\n");
