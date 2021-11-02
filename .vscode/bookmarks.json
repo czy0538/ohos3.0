@@ -109,6 +109,16 @@
 					"label": "[3516] GetLocalInterfaceName 问题代码入口"
 				}
 			]
+		},
+		{
+			"path": "foundation/communication/dsoftbus/components/nstackx/nstackx_ctrl/core/coap_discover/json_payload.c",
+			"bookmarks": [
+				{
+					"line": 288,
+					"column": 0,
+					"label": "【3516】PrepareServiceDiscover"
+				}
+			]
 		}
 	]
 }

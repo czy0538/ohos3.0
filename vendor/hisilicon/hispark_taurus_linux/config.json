@@ -1,10 +1,10 @@
 {
     "product_name": "ipcamera_hispark_taurus_linux",
-    "ohos_version": "OpenHarmony 1.0",
+    "ohos_version": "OpenHarmony 3.0",
     "device_company": "hisilicon",
     "board": "hispark_taurus",
     "kernel_type": "linux",
-    "kernel_version": "4.19",
+    "kernel_version": "5.10.57",
     "subsystems": [
       {
         "subsystem": "ace",

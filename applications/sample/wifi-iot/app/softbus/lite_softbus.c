@@ -24,14 +24,14 @@ void onSessionClosedFunc(int sessionId);
 int onSessionOpenedFunc(int sessionId);
 
 // 定义相关名称
-const char *g_pkgName = "czypkgName";
-const char *g_sessionName = "czysessionName";
-const char *moduleName = "czymoduleName";
+const char *g_pkgName = "czypkgName3861";
+const char *g_sessionName = "czysessionName3861";
+const char *moduleName = "czymoduleName3861";
 
 //定义参数
 static PublishInfo info =
     {
-        .publishId = 233,
+        .publishId = 256,
         .mode = DISCOVER_MODE_PASSIVE,
         .medium = COAP,
         .freq = HIGH,
