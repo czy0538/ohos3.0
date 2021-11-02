@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 #include <stdio.h>
+#include <string.h>
 
 #include "json_payload.h"
 #include <securec.h>
@@ -302,6 +303,8 @@ char *PrepareServiceDiscover(uint8_t isBroadcast)
     }
 
     printf("[CZY_TEST_PrepareServiceDiscover] device hash is:%s\r\n",deviceInfo->deviceHash);
+    //直接给一个hash
+    strcpy(deviceInfo->deviceHash,"10086000000275820");
 
     /* Prepare local device info */
     if ((AddDeviceJsonData(data, deviceInfo) != NSTACKX_EOK) ||
