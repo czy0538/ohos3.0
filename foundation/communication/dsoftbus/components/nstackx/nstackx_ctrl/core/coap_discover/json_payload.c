@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include <stdio.h>
 
 #include "json_payload.h"
 #include <securec.h>
@@ -291,6 +292,7 @@ char *PrepareServiceDiscover(uint8_t isBroadcast)
     char host[NSTACKX_MAX_IP_STRING_LEN] = {0};
     char *formatString = NULL;
     const DeviceInfo *deviceInfo = GetLocalDeviceInfoPtr();
+
     cJSON *data = NULL;
     cJSON *localCoapString = NULL;
 
@@ -298,6 +300,8 @@ char *PrepareServiceDiscover(uint8_t isBroadcast)
     if (data == NULL) {
         goto L_END_JSON;
     }
+
+    printf("[CZY_TEST_PrepareServiceDiscover] device hash is:%s\r\n",deviceInfo->deviceHash);
 
     /* Prepare local device info */
     if ((AddDeviceJsonData(data, deviceInfo) != NSTACKX_EOK) ||
