@@ -31,7 +31,7 @@ static IDiscoveryCallback DiscCb = {
     .OnDeviceFound = TestDeviceFound,
     .OnDiscoverFailed = TestDiscoverFailed,
     .OnDiscoverySuccess = TestDiscoverySuccess};
-    
+
 static ISessionListener SessionCb =
     {
         .OnBytesReceived = onBytesReceivedFunc,
@@ -128,7 +128,7 @@ void TestDiscoverySuccess(int subscribeId)
 
 void onJoinLNNResultFunc(ConnectionAddr *addr, const char *networkId, int32_t retCode)
 {
-    printf("[czy_test] %d JoinLNN success,retCode is %d \r\n",retCode);
+    printf("[czy_test] JoinLNN retCode is %d \r\n",retCode);
 }
 
 void onMessageReceivedFunc(int sessionId, const void *data, unsigned int dataLen)

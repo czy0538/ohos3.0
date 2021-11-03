@@ -11,15 +11,15 @@
 #define TRANS_FAILED -1
 
 // 定义业务⾃身的业务名称，会话名称及相关回调
-const char *g_pkgName = "czyPkgName";
-const char *g_sessionName = "czySessionName";
-const char *g_demoModuleName = "czyModuleName";
+const char *g_pkgName = "czyPkgName_b";
+const char *g_sessionName = "czySessionName_b";
+const char *g_demoModuleName = "czyModuleName_b";
 
 static PublishInfo g_publishInfo = {
     .capabilityData = (unsigned char *)"a",
     .capability = "dvKit",
     .dataLen = sizeof("a"),
-    .publishId = 233,
+    .publishId = 234,
     .mode = DISCOVER_MODE_ACTIVE,
     .medium = COAP,
     .freq = HIGH,
@@ -91,8 +91,8 @@ void StopSessionServer()
 void onSuccess(int publishId)
 {
     printf("publish succeeded, publishId = %d\r\n", publishId);
-    if (StartSessionServer() != -1)
-        printf("-----StartSessionServer successed!-----\n");
+    // if (StartSessionServer() != -1)
+    //     printf("-----StartSessionServer successed!-----\n");
 }
 void onFail(int publishId, PublishFailReason reason)
 {
