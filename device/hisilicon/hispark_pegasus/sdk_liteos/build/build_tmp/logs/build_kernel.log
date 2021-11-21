@@ -15,7 +15,7 @@ make app_subver_temp_dir
 mdmxml:/home/czy/ohos3.0/device/hisilicon/hispark_pegasus/sdk_liteos/tools/nvtool/xml_file/mss_nvi_db.xml
 src_xml_list: ['/home/czy/ohos3.0/device/hisilicon/hispark_pegasus/sdk_liteos/tools/nvtool/xml_file/mss_nvi_db.xml']
 combin_xml:/home/czy/ohos3.0/device/hisilicon/hispark_pegasus/sdk_liteos/tools/nvtool/out_nv_bin/sta/nv/Hi3861_wifiiot_app/mss_nvi_db.xml
-root_list [<Element 'HISTUDIO' at 0x7fd59339c680>]
+root_list [<Element 'HISTUDIO' at 0x7fcf890f01d0>]
 hi_nv_modify_by_cfg
 cfg_file: nv
 
@@ -41,160 +41,46 @@ Normal NV total size:766
 build hnv OK:/home/czy/ohos3.0/device/hisilicon/hispark_pegasus/sdk_liteos/tools/nvtool/out_nv_bin/sta/nv/hnv/Hi3861_wifiiot_app.hnv
 ENDING
 riscv32-unknown-elf-gcc -Iplatform/os/Huawei_LiteOS/kernel/include -Iconfig -DCONFIG_TEE_HUKS_SUPPORT -DCONFIG_CHIP_PKT_32K -DHI_BOARD_ASIC -DHI_ON_FLASH -DFLASH_FIRM_START=4248512 -E build/link/link.ld.S -o build/build_tmp/scripts/link.lds -P
-riscv32-unknown-elf-ld -nostartfiles -nostdlib -static --gc-sections -L/home/czy/gcc_riscv32/bin/../lib/gcc/riscv32-unknown-elf/7.3.0 -L/home/czy/ohos3.0/device/hisilicon/hispark_pegasus/sdk_liteos/build/scripts/../../../../../huawei/hms/hilink/ohos/l0/hi3861/lib/wifi -Lbuild/build_tmp/libs/app/wifiiot_app -Lbuild/build_tmp/libs/components/at -Lbuild/build_tmp/libs/platform/drivers -Lbuild/build_tmp/libs/platform/system -Lbuild/build_tmp/scripts -Lbuild/libs -Lbuild/libs/hi3861/release/no_mesh -Lbuild/scripts -Lohos/libs -Tbuild/build_tmp/scripts/link.lds -Map=output/bin/Hi3861_wifiiot_app.map -o output/bin/Hi3861_wifiiot_app.out --start-group --no-whole-archive --whole-archive -ladc -lat -lauthmanager -lblackbox -lbootstrap -lbroadcast -lc_flash -lcfg -lcjson_static -lcmsis -lcpup -ldiag -ldiscovery -ldrv -ldump_static -leasy_wifi -lflash -lgcc -lgpio -lhal_file_static -lhal_iothardware -lhal_sysparam -lhal_token_static -lhal_update_static -lhal_wifiaware -lhichainsdk -lhidumper_mini -lhievent_lite -lhilog_lite -lhiview_lite -lhota -lhuks_3.0_sdk -lio -liperf -llitekernel_flash -lltoswpa -llwip -lm_flash -lmbedtls -lnative_file -lparttab -lposix -lres_cfg -lsamgr -lsamgr_adapter -lsamgr_source -lsdio -lsec_flash -lsoftbus_demo -lspiffs -lsysparam -lsystem -ltoken_static -ltrans_service -ltsensor -luart -lupg -lutils_kv_store -lwifi -lwifi_flash -lwifiaware -lwifiiot_app -lwifiservice -lwpa --end-group
-riscv32-unknown-elf-objcopy -O binary output/bin/Hi3861_wifiiot_app.out build/build_tmp/cache/Hi3861_wifiiot_app.bin
-baseimg_builder(["build/build_tmp/cache/Hi3861_wifiiot_app_base.bin", "build/build_tmp/cache/Hi3861_wifiiot_app_kernel.bin"], ["build/build_tmp/cache/Hi3861_wifiiot_app.bin"])
-cleanup(["build/build_tmp/cache/Hi3861_wifiiot_app_base.bin", "build/build_tmp/cache/Hi3861_wifiiot_app_kernel.bin"], ["build/build_tmp/cache/Hi3861_wifiiot_app.bin"])
-ota_builder(["build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.bin"], ["build/build_tmp/cache/Hi3861_wifiiot_app_base.bin", "build/build_tmp/cache/Hi3861_wifiiot_app_kernel.bin"])
-********************package kernel&nv upgrade file********************
-upg kernel file    in: build/build_tmp/cache/Hi3861_wifiiot_app_kernel.bin
-upg normal nv file in: build/build_tmp/nv/Hi3861_wifiiot_app_normal.hnv
-upg file          out: build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.bin
-[common_head_offset=0][common_head_size=96]
-[common_key_offset=96][common_key_size=288]
-[common_head_sign_offset=384][common_head_sign_size=256]
-[section_head_offset=640][section_head_size=64]
-[upg_file_sign_offset=704][upg_file_sign_size=256]
-[padding_offset=786056][padding_size=8]
-[upg fill user info]chip:b'Hi3861'
--------------build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.bin image info print start-------------
-[image_id=0x3c78961e][struct_version=0x0]]
-[section_offset=0x280][section_len=0xbfc10]
-[file_type=0xf0][file_version=0x0][encrypt_flag=0x42]
-[file_len=0xbfe90][key_len=0x120]
-[file_attr=0x44]
-[hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
-[aes_key[0-1-14-15]=[0x0][0x0][0x0][0x0]]
-[aes_iv [0-1-14-15]=[0x0][0x0][0x0][0x0]]
-[common key][00]=[0x0]
-[common key][01]=[0x0]
-[common key][30]=[0x0]
-[common key][31]=[0x0]
-[common sign][00]=[0x8f]
-[common sign][01]=[0xe9]
-[common sign][30]=[0xb7]
-[common sign][31]=[0xfc]
-[section sign][00]=[0xc3]
-[section sign][01]=[0xa0]
-[section sign][30]=[0x5c]
-[section sign][31]=[0x3a]
-[image_id=0x3c78961e][struct_version=0x0]]
-[hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
-[section_count=0x2]
-[section0_compress=0x0][section0_offset=0x3c0][section0_len=0xbeac8]
-[section1_compress=0x0][section1_offset=0xbee88][section1_len=0x1000]
--------------build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.bin image info print end--------------
-riscv32-unknown-elf-objdump -d output/bin/Hi3861_wifiiot_app.out > output/bin/Hi3861_wifiiot_app.asm
-burn_bin_builder(["output/bin/Hi3861_wifiiot_app_burn.bin", "output/bin/Hi3861_wifiiot_app_allinone.bin"], ["build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.bin", "output/bin/Hi3861_loader_signed.bin"])
-********************package hiburn file********************
-hbin flash boot file in : output/bin/Hi3861_boot_signed.bin
-hbin factory nv file in : build/build_tmp/nv/Hi3861_wifiiot_app_factory.hnv
-hbin normal nv file  in : build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.bin
-hbin upg file        in : build/build_tmp/nv/Hi3861_wifiiot_app_factory.hnv
-hbin file           out : output/bin/Hi3861_wifiiot_app_burn.bin
--------------output/bin/Hi3861_wifiiot_app_burn.bin image info print start-------------
-[bin_size]=[0xcce90]
-[image_id=0x3c78961e][struct_version=0x0]]
-[section_offset=0x280][section_len=0xbfc10]
-[file_type=0xf0][file_version=0x0][encrypt_flag=0x42]
-[file_len=0xbfe90][key_len=0x120]
-[hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
-[aes_key[0,1,14,15]=[0x0][0x0][0x0][0x0]]
-[aes_iv[0,1,14,15]=[0x0][0x0][0x0][0x0]]
--------------output/bin/Hi3861_wifiiot_app_burn.bin image info print end--------------
-['output/bin/Hi3861_loader_signed.bin', 'output/bin/Hi3861_wifiiot_app_burn.bin']
-[0, 0]
-[0, 2097152]
-[15360, 839312]
-[0, 1]
-4022250975
-boot_ota_builder(["output/bin/Hi3861_wifiiot_app_flash_boot_ota.bin"], ["output/bin/Hi3861_boot_signed.bin"])
-********************package boot upgrade file********************
-boot upg file  in: output/bin/Hi3861_boot_signed.bin
-boot upg file out: output/bin/Hi3861_wifiiot_app_flash_boot_ota.bin
-[common_head_offset=0][common_head_size=96]
-[common_key_offset=96][common_key_size=288]
-[common_head_sign_offset=384][common_head_sign_size=256]
-[section_head_offset=640][section_head_size=64]
-[upg_file_sign_offset=704][upg_file_sign_size=256]
-[padding_offset=0][padding_size=0]
-[upg fill user info]chip:b'Hi3861'
--------------output/bin/Hi3861_wifiiot_app_flash_boot_ota.bin image info print start-------------
-[image_id=0x3c78961e][struct_version=0x0]]
-[section_offset=0x280][section_len=0x60a0]
-[file_type=0xe1][file_version=0x0][encrypt_flag=0x42]
-[file_len=0x6320][key_len=0x120]
-[file_attr=0x44]
-[hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
-[aes_key[0-1-14-15]=[0x0][0x0][0x0][0x0]]
-[aes_iv [0-1-14-15]=[0x0][0x0][0x0][0x0]]
-[common key][00]=[0x0]
-[common key][01]=[0x0]
-[common key][30]=[0x0]
-[common key][31]=[0x0]
-[common sign][00]=[0xc9]
-[common sign][01]=[0x21]
-[common sign][30]=[0x2f]
-[common sign][31]=[0x82]
-[section sign][00]=[0x34]
-[section sign][01]=[0x40]
-[section sign][30]=[0x90]
-[section sign][31]=[0x2]
-[image_id=0x3c78961e][struct_version=0x0]]
-[hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
-[section_count=0x1]
-[section0_compress=0x0][section0_offset=0x3c0][section0_len=0x5f60]
-[section1_compress=0x0][section1_offset=0x0][section1_len=0x0]
--------------output/bin/Hi3861_wifiiot_app_flash_boot_ota.bin image info print end--------------
-compress_ota_builder(["output/bin/Hi3861_wifiiot_app_ota.bin"], ["build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.bin"])
-********************package compress upgrade file********************
-compress upg file in:  build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.bin
-compress upg file out: output/bin/Hi3861_wifiiot_app_ota.bin
-lzma compress tool : /home/czy/ohos3.0/device/hisilicon/hispark_pegasus/sdk_liteos/build/scripts/../../tools/lzma_tool/lzma_tool
-lzma    src   file : build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.bin
-lzma    out   file : build/build_tmp/cache/Hi3861_wifiiot_app_ota_temp.lzma
-
-LZMA 19.00 (x64) : Igor Pavlov : Public domain : 2019-02-21
-
-Input size:  786064 (0 MiB)
-                                                                Output size: 478204 (0 MiB)
-[upgbin-compressbin]0xbfe90-0x116000
-[common_head_offset=0][common_head_size=96]
-[common_key_offset=96][common_key_size=288]
-[common_head_sign_offset=384][common_head_sign_size=256]
-[section_head_offset=640][section_head_size=64]
-[upg_file_sign_offset=704][upg_file_sign_size=256]
-[padding_offset=479164][padding_size=4]
-[upg fill user info]chip:b'Hi3861'
--------------output/bin/Hi3861_wifiiot_app_ota.bin image info print start-------------
-[image_id=0x3c78961e][struct_version=0x0]]
-[section_offset=0x280][section_len=0x74d40]
-[file_type=0xf0][file_version=0x0][encrypt_flag=0x42]
-[file_len=0x74fc0][key_len=0x120]
-[file_attr=0x44]
-[hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
-[aes_key[0-1-14-15]=[0x0][0x0][0x0][0x0]]
-[aes_iv [0-1-14-15]=[0x0][0x0][0x0][0x0]]
-[common key][00]=[0x0]
-[common key][01]=[0x0]
-[common key][30]=[0x0]
-[common key][31]=[0x0]
-[common sign][00]=[0x47]
-[common sign][01]=[0x4a]
-[common sign][30]=[0xae]
-[common sign][31]=[0x7a]
-[section sign][00]=[0x8c]
-[section sign][01]=[0x2]
-[section sign][30]=[0xf4]
-[section sign][31]=[0xc8]
-[image_id=0x3c78961e][struct_version=0x0]]
-[hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
-[section_count=0x1]
-[section0_compress=0x1][section0_offset=0x3c0][section0_len=0x74bfc]
-[section1_compress=0x0][section1_offset=0x0][section1_len=0x0]
--------------output/bin/Hi3861_wifiiot_app_ota.bin image info print end--------------
-[95m
-< ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ >
-                              BUILD SUCCESS                              
-< ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ >
-[0m
+riscv32-unknown-elf-ld -nostartfiles -nostdlib -static --gc-sections -L/home/czy/gcc_riscv32/bin/../lib/gcc/riscv32-unknown-elf/7.3.0 -L/home/czy/ohos3.0/device/hisilicon/hispark_pegasus/sdk_liteos/build/scripts/../../../../../huawei/hms/hilink/ohos/l0/hi3861/lib/wifi -Lbuild/build_tmp/libs/app/wifiiot_app -Lbuild/build_tmp/libs/components/at -Lbuild/build_tmp/libs/platform/drivers -Lbuild/build_tmp/libs/platform/system -Lbuild/build_tmp/scripts -Lbuild/libs -Lbuild/libs/hi3861/release/no_mesh -Lbuild/scripts -Lohos/libs -Tbuild/build_tmp/scripts/link.lds -Map=output/bin/Hi3861_wifiiot_app.map -o output/bin/Hi3861_wifiiot_app.out --start-group --no-whole-archive --whole-archive -ladc -lat -lauthmanager -lblackbox -lbootstrap -lbroadcast -lc_flash -lcfg -lcjson_static -lcmsis -lcpup -ldiag -ldiscovery -ldrv -ldt_python_demo -ldtpython -ldump_static -leasy_wifi -lflash -lgcc -lgpio -lhal_file_static -lhal_iothardware -lhal_sysparam -lhal_token_static -lhal_update_static -lhal_wifiaware -lhctest -lhichainsdk -lhidumper_mini -lhievent_lite -lhilog_lite -lhiview_lite -lhota -lhuks_3.0_sdk -lhuks_test_common -lio -liperf -llitekernel_flash -lltoswpa -llwip -lm_flash -lmbedtls -lmodule_ActsBootstrapTest -lmodule_ActsDfxFuncTest -lmodule_ActsHieventLiteTest -lmodule_ActsHuksHalFunctionTest -lmodule_ActsKvStoreTest -lmodule_ActsLwipTest -lmodule_ActsParameterTest -lmodule_ActsSamgrTest -lmodule_ActsUpdaterFuncTest -lmodule_ActsUtilsFileTest -lmodule_ActsWifiIotTest -lmodule_ActsWifiServiceTest -lnative_file -lparttab -lposix -lres_cfg -lsamgr -lsamgr_adapter -lsamgr_source -lsdio -lsec_flash -lspiffs -lsysparam -lsystem -ltoken_static -ltrans_service -ltsensor -luart -lupg -lutils_kv_store -lwifi -lwifi_flash -lwifiaware -lwifiiot_app -lwifiservice -lwpa --end-group
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(adc_impl.o): in function `mp_adc_read':
+adc_impl.c:(.text.mp_adc_read+0x46): undefined reference to `DTAdcRead'
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(gpio_impl.o): in function `mp_gpio_set_pull':
+gpio_impl.c:(.text.mp_gpio_set_pull+0x1c): undefined reference to `DTGpioSetPull'
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(gpio_impl.o): in function `mp_gpio_set_func':
+gpio_impl.c:(.text.mp_gpio_set_func+0x1c): undefined reference to `DTGpioSetFunc'
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(i2c_impl.o): in function `.L30':
+i2c_impl.c:(.text.mp_i2c_write_read+0xb0): undefined reference to `DTI2cWriteRead'
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(spi_impl.o): in function `mp_spi_init':
+spi_impl.c:(.text.mp_spi_init+0x32): undefined reference to `DTSpiInit'
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(spi_impl.o): in function `mp_spi_deinit':
+spi_impl.c:(.text.mp_spi_deinit+0x8): undefined reference to `DTSpiDeinit'
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(spi_impl.o): in function `.L11':
+spi_impl.c:(.text.mp_spi_host_write+0x6c): undefined reference to `DTSpiHostWrite'
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(spi_impl.o): in function `mp_spi_host_read':
+spi_impl.c:(.text.mp_spi_host_read+0x3c): undefined reference to `DTSpiHostRead'
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(spi_impl.o): in function `.L30':
+spi_impl.c:(.text.mp_spi_host_write_read+0x90): undefined reference to `DTSpiHostWriteRead'
+riscv32-unknown-elf-ld: build/libs/libdtpython.a(spi_impl.o): in function `mp_spi_set_info':
+spi_impl.c:(.text.mp_spi_set_info+0x32): undefined reference to `DTSpiSetInfo'
+riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(libhal_iothardware.hal_iot_i2c.o): in function `IoTI2cWrite':
+hal_iot_i2c.c:(.text.IoTI2cWrite+0x1a): undefined reference to `hi_i2c_write'
+riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(libhal_iothardware.hal_iot_i2c.o): in function `IoTI2cRead':
+hal_iot_i2c.c:(.text.IoTI2cRead+0x1a): undefined reference to `hi_i2c_read'
+riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(libhal_iothardware.hal_iot_i2c.o): in function `IoTI2cInit':
+hal_iot_i2c.c:(.text.IoTI2cInit+0x10): undefined reference to `hi_i2c_init'
+riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(libhal_iothardware.hal_iot_i2c.o): in function `IoTI2cDeinit':
+hal_iot_i2c.c:(.text.IoTI2cDeinit+0x10): undefined reference to `hi_i2c_deinit'
+riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(libhal_iothardware.hal_iot_i2c.o): in function `IoTI2cSetBaudrate':
+hal_iot_i2c.c:(.text.IoTI2cSetBaudrate+0x10): undefined reference to `hi_i2c_set_baudrate'
+riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(libhal_iothardware.hal_iot_pwm.o): in function `IoTPwmInit':
+hal_iot_pwm.c:(.text.IoTPwmInit+0x14): undefined reference to `hi_pwm_set_clock'
+riscv32-unknown-elf-ld: hal_iot_pwm.c:(.text.IoTPwmInit+0x22): undefined reference to `hi_pwm_init'
+riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(libhal_iothardware.hal_iot_pwm.o): in function `IoTPwmDeinit':
+hal_iot_pwm.c:(.text.IoTPwmDeinit+0x10): undefined reference to `hi_pwm_deinit'
+riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(libhal_iothardware.hal_iot_pwm.o): in function `IoTPwmStart':
+hal_iot_pwm.c:(.text.IoTPwmStart+0x4e): undefined reference to `hi_pwm_start'
+riscv32-unknown-elf-ld: ohos/libs/libhal_iothardware.a(libhal_iothardware.hal_iot_pwm.o): in function `IoTPwmStop':
+hal_iot_pwm.c:(.text.IoTPwmStop+0x10): undefined reference to `hi_pwm_stop'
+scons: *** [output/bin/Hi3861_wifiiot_app.out] Error 1
+[91mBUILD FAILED!!!![0m
+[91mFailed building output/bin/Hi3861_wifiiot_app.out: Error 1[0m

@@ -18,6 +18,7 @@ lite_component("app") {
         "startup",
         "easy_wifi:easy_wifi",
         #"wifo_demo:wifi_demo",
-        "softbus:softbus_demo"
+        #"softbus:softbus_demo",
+        "Python:dt_python_demo"
     ]
 }
