@@ -1,0 +1,10 @@
+{
+  "subsystem": "developtools",
+  "parts": {
+    "dropbear": {
+      "module_list": [
+        "//developtools/dropbear:dropbear"
+      ]
+    }
+  }
+}

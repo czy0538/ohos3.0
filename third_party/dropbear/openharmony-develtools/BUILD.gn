@@ -1,0 +1,18 @@
+import("//build/ohos.gni")
+
+ohos_prebuilt_etc("dropbear.init") {
+  if (use_musl) {
+    source = "dropbear.cfg"
+  } else {
+    source = "dropbear.rc"
+  }
+  relative_install_dir = "init"
+  part_name = "dropbear"
+}
+
+group("dropbear") {
+  deps = [
+    "//third_party/dropbear:dropbear",
+    ":dropbear.init",
+  ]
+}

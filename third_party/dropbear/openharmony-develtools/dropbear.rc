@@ -1,0 +1,26 @@
+## Author xiaofan <xiaofan@iscas.ac.cn>
+
+## Running dropbear on your device is very dangerous.
+## So it does't autorun by default
+## Using command 'start dropbear' in shell to start it
+
+
+## NOTE: Selinux may have not been set up correctly
+## so command 'start dropbear' may fail.
+## I found two way to workaround with this BUG
+##  1.  use 'DROPBEAR_PASSWORD=123456 dropbear -RB' in root shell to
+##      start dropbear
+##  2.  mount system.img on your computer, use the command
+##      'setfattr -n security.selinux -v u:object_r:adbd_exec:s0 dropbear'
+##      on dropbear executable
+
+on post-fs
+    mkdir /data/dropbear
+    ## Uncomment the following line if you want autorun dropbear (dangerous)
+    start dropbear
+
+    ## if you want configure ip for interface at boot
+    # exec /system/bin/ifconfig eth0 192.168.137.2
+
+service dropbear /system/bin/dropbear -FRB
+    setenv DROPBEAR_PASSWORD 123456
